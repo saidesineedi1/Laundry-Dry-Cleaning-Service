@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="WashAura Journal — Explore expert garment care guides, dry cleaning textile science, fabric preservation rituals, and sustainable laundry wisdom." />
+  <meta name="keywords"
+    content="laundry journal, garment care guides, dry cleaning science, cashmere care, fabric preservation" />
+  <title>Journal — WashAura | Garment Care Guides &amp; Textile Science</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="journals.css" />
+</head>
+
+<body>
+
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="WashAura Home" id="logo-link">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/logo.png" alt="WashAura Logo" class="logo-img" />
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">WashAura</span>
+          <span class="logo-tagline">Pure Garment Care. Delivered to Your Door.</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list" role="list">
+          <li class="nav-item has-dropdown" id="nav-home-item">
+            <a href="index.html" class="nav-link nav-dropdown-trigger" id="nav-home" aria-expanded="false"
+              aria-haspopup="true">
+              <span>Home</span>
+              <i data-lucide="chevron-down" class="dropdown-chevron" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Home versions">
+              <a href="index.html" class="dropdown-item" role="menuitem">
+                <div class="dropdown-item-icon"><i data-lucide="sparkles" aria-hidden="true"></i></div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-header"><span class="dropdown-item-title">Home 1</span></div>
+                  <span class="dropdown-item-desc">WashAura &bull; Premium Laundry &amp; Dry Cleaning</span>
+                </div>
+              </a>
+              <a href="home2.html" class="dropdown-item" role="menuitem">
+                <div class="dropdown-item-icon icon-ayurveda"><i data-lucide="leaf" aria-hidden="true"></i></div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-header">
+                    <span class="dropdown-item-title">Home 2</span>
+                    <span class="dropdown-badge badge-alt">New</span>
+                  </div>
+                  <span class="dropdown-item-desc">PureCare &bull; Eco-Botanical Care</span>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li><a href="about.html" class="nav-link" id="nav-about">About</a></li>
+          <li><a href="services.html" class="nav-link" id="nav-services">Services</a></li>
+          <li><a href="journals.html" class="nav-link active" id="nav-journal">Journal</a></li>
+          <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link" id="nav-dashboard">Dashboard</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions" role="toolbar" aria-label="Site actions">
+        <button class="toggle-btn rtl-toggle" id="rtl-toggle" aria-label="Toggle text direction" aria-pressed="false"
+          title="Switch text direction (RTL / LTR)">
+          <span class="toggle-label">RTL</span></button>
+
+        <button class="toggle-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"
+          title="Toggle light and dark mode">
+          <span class="theme-icon sun-icon"><i data-lucide="sun" aria-hidden="true"></i></span>
+          <span class="theme-icon moon-icon"><i data-lucide="moon" aria-hidden="true"></i></span>
+        </button>
+
+        <a href="login.html" class="btn btn-primary nav-login-btn" id="nav-login-btn">Login</a>
+
+        <button class="hamburger" id="hamburger-btn" aria-label="Open mobile menu" aria-expanded="false"
+          aria-controls="main-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
+      <div class="search-inner">
+        <div class="search-input-box">
+          <i data-lucide="search" class="search-input-icon" aria-hidden="true"></i>
+          <input type="search" class="search-input" id="search-input"
+            placeholder="Search wash & fold, dry cleaning, steam press..." aria-label="Search services"
+            autocomplete="off" />
+          <button class="search-close" id="search-close" aria-label="Close search"><i data-lucide="x"
+              aria-hidden="true"></i></button>
+        </div>
+        <div class="search-suggestions" id="search-suggestions">
+          <span class="sugg-label">Popular Searches:</span>
+          <button class="sugg-pill" data-query="Wash & Fold">Wash &amp; Fold</button>
+          <button class="sugg-pill" data-query="Dry Cleaning">Dry Cleaning</button>
+          <button class="sugg-pill" data-query="Steam Ironing">Steam Press</button>
+          <button class="sugg-pill" data-query="Curtain">Curtains</button>
+        </div>
+        <div class="search-results-list" id="search-results-list"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-header">
+      <span class="logo-name">WashAura</span>
+      <button class="icon-btn mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item has-dropdown" id="mobile-nav-home-item">
+        <button class="mobile-nav-link mobile-dropdown-btn" id="mobile-home-toggle" aria-expanded="false">
+          <span>Home</span>
+          <i data-lucide="chevron-down" class="mobile-dropdown-chevron" aria-hidden="true"></i>
+        </button>
+        <ul class="mobile-submenu" id="mobile-home-submenu">
+          <li><a href="index.html" class="mobile-sublink"><i data-lucide="sparkles" aria-hidden="true"></i><span>Home
+                1 (WashAura)</span></a></li>
+          <li><a href="home2.html" class="mobile-sublink"><i data-lucide="leaf" aria-hidden="true"></i><span>Home
+                2 (PureCare)</span></a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="journals.html" class="mobile-nav-link active">Journal</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+      <li class="mobile-nav-login-item">
+        <a href="login.html" class="btn btn-primary mobile-menu-login-btn" id="mobile-drawer-login-btn">
+          <span>Login</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="mobile-drawer-actions">
+      <div class="mobile-actions-grid">
+        <button class="mobile-action-card cart-action-card"
+          onclick="if(typeof openCartDrawer==='function')openCartDrawer();" aria-label="Open Shopping Bag">
+          <div class="mobile-card-icon-wrap">
+            <i data-lucide="shopping-bag" aria-hidden="true"></i>
+            <span class="mobile-cart-badge cart-count-badge">0</span>
+          </div>
+          <div class="mobile-card-text">
+            <span class="mobile-card-title">Pickup Hamper</span>
+            <span class="mobile-card-sub">View Services</span>
+          </div>
+        </button>
+        <a href="dashboard.html" class="mobile-action-card account-action-card" aria-label="Go to Member Dashboard">
+          <div class="mobile-card-icon-wrap user-icon-wrap">
+            <i data-lucide="user" aria-hidden="true"></i>
+          </div>
+          <div class="mobile-card-text">
+            <span class="mobile-card-title">Member Portal</span>
+            <span class="mobile-card-sub">Account &amp; Orders</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <p class="mobile-nav-tagline">“Pure Garment Care. Delivered to Your Door.”</p>
+    </div>
+  </div>
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+
+  <main id="main-content">
+
+    <section class="jn-hero" id="journal-hero" aria-labelledby="jn-hero-heading">
+      <div class="jn-hero-orbs" aria-hidden="true">
+        <div class="jn-orb jn-orb-1"></div>
+        <div class="jn-orb jn-orb-2"></div>
+        <div class="jn-orb jn-orb-3"></div>
+      </div>
+      <div class="jn-particles" aria-hidden="true">
+        <span class="jn-particle"></span><span class="jn-particle"></span>
+        <span class="jn-particle"></span><span class="jn-particle"></span>
+        <span class="jn-particle"></span><span class="jn-particle"></span>
+      </div>
+      <div class="container jn-hero-inner">
+        <div class="jn-hero-content">
+          <div class="jn-hero-eyebrow">
+            <span class="jn-eyebrow-icon"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+            <p>FABRIC CARE &bull; TEXTILE SCIENCE &bull; GARMENT LONGEVITY</p>
+          </div>
+          <h1 class="jn-hero-title" id="jn-hero-title">Stories &amp; Wisdom for <em>Cared-For Fabrics</em></h1>
+          <p class="jn-hero-desc">
+            Dive deep into the world of professional garment care — insights into delicate fiber biology, closed-loop solvent science, and timeless preservation rituals for your wardrobe.
+          </p>
+          <div class="jn-hero-actions">
+            <a href="#journal-articles" class="btn btn-primary jn-btn-primary" id="jn-hero-read-btn">
+              Read Latest <i data-lucide="arrow-down" aria-hidden="true"></i>
+            </a>
+            <a href="#journal-categories" class="btn btn-outline jn-btn-outline" id="jn-hero-browse-btn">Browse
+              Topics</a>
+          </div>
+          <div class="jn-hero-stats" aria-label="Journal statistics">
+            <div class="jn-stat"><span class="jn-stat-num">48+</span><span class="jn-stat-label">Articles
+                Published</span></div>
+            <div class="jn-stat-divider" aria-hidden="true"></div>
+            <div class="jn-stat"><span class="jn-stat-num">14k</span><span class="jn-stat-label">Monthly Readers</span>
+            </div>
+            <div class="jn-stat-divider" aria-hidden="true"></div>
+            <div class="jn-stat"><span class="jn-stat-num">5</span><span class="jn-stat-label">Topic Categories</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="jn-hero-5gallery-stage" aria-label="Featured Stories Gallery">
+
+          <div class="jn-5card jn-5card-main" onclick="openJournal('cashmere-wool-preservation')" tabindex="0" role="button"
+            aria-label="Featured Story: The Art of Cashmere Care">
+            <div class="jn-5card-img-box">
+              <img src="assets/journal-cashmere.jpg" alt="Folded cashmere and fine merino sweaters" class="jn-5card-img" />
+              <div class="jn-5card-gradient"></div>
+            </div>
+            <div class="jn-5card-body">
+              <span class="jn-5card-badge"><i data-lucide="star" aria-hidden="true"></i> FEATURED STORY</span>
+              <h2 class="jn-5card-title">The Art of Cashmere Care</h2>
+              <p class="jn-5card-excerpt">Fiber preservation protocols and pill prevention.</p>
+              <div class="jn-5card-read-btn">Read Story <i data-lucide="arrow-right" aria-hidden="true"></i></div>
+            </div>
+          </div>
+
+          <div class="jn-5card jn-5card-tl" onclick="openJournal('closed-loop-dry-cleaning-science')" tabindex="0"
+            role="button" aria-label="Story: Solvent Science">
+            <div class="jn-5card-img-box">
+              <img src="assets/journal-eco-science.jpg" alt="Dry cleaning precision garment care and solvent science" class="jn-5card-img" />
+            </div>
+            <div class="jn-5card-tag"><i data-lucide="sparkles" aria-hidden="true"></i> Solvent Science</div>
+          </div>
+
+          <div class="jn-5card jn-5card-tr" onclick="openJournal('cotton-shrinkage-and-ironing')" tabindex="0"
+            role="button" aria-label="Story: Steam Pressing">
+            <div class="jn-5card-img-box circle-frame">
+              <img src="assets/process-pressing.jpg" alt="Steam ironing pressing session" class="jn-5card-img" />
+            </div>
+            <div class="jn-5card-tag"><i data-lucide="sun" aria-hidden="true"></i> Steam Pressing</div>
+          </div>
+
+          <div class="jn-5card jn-5card-bl" onclick="openJournal('curtain-and-interior-textile-care')" tabindex="0" role="button"
+            aria-label="Story: Interior Drapery">
+            <div class="jn-5card-img-box">
+              <img src="assets/laundry-curtains.jpg" alt="Curtain and drapery care" class="jn-5card-img" />
+            </div>
+            <div class="jn-5card-tag"><i data-lucide="leaf" aria-hidden="true"></i> Interior Drapery</div>
+          </div>
+
+          <div class="jn-5card jn-5card-br" onclick="openJournal('delicate-lingerie-and-lace-care')" tabindex="0" role="button"
+            aria-label="Story: Couture Delicates">
+            <div class="jn-5card-img-box">
+              <img src="assets/laundry-delicates.jpg" alt="Delicate lace and couture fabric care" class="jn-5card-img" />
+            </div>
+            <div class="jn-5card-tag"><i data-lucide="heart" aria-hidden="true"></i> Couture Delicates</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="jn-articles" id="journal-articles" aria-labelledby="jn-articles-heading">
+      <div class="container">
+        <div class="jn-section-header">
+          <p class="section-eyebrow">
+            <span class="eyebrow-sparkle"><i data-lucide="book-open" aria-hidden="true"></i></span>
+            Our Stories
+          </p>
+          <h2 class="jn-section-title" id="jn-articles-heading">Latest from the Journal</h2>
+          <p class="jn-section-desc">Thoughtful reads on textile science, couture fabric care, and the craft of garment longevity. Each article is an expert guide to caring for your wardrobe.</p>
+        </div>
+
+        <div class="jn-filter-tabs" id="journal-categories" role="tablist" aria-label="Filter articles by category">
+          <button class="jn-filter-tab active" data-filter="all" role="tab" aria-selected="true" id="filter-all">All
+            Guides</button>
+          <button class="jn-filter-tab" data-filter="garment-care" role="tab" aria-selected="false"
+            id="filter-garment-care">Garment Care</button>
+          <button class="jn-filter-tab" data-filter="science" role="tab" aria-selected="false" id="filter-science">Textile
+            Science</button>
+          <button class="jn-filter-tab" data-filter="ironing" role="tab" aria-selected="false"
+            id="filter-ironing">Steam Pressing</button>
+          <button class="jn-filter-tab" data-filter="dry-cleaning" role="tab" aria-selected="false"
+            id="filter-dry-cleaning">Dry Cleaning</button>
+          <button class="jn-filter-tab" data-filter="lifestyle" role="tab" aria-selected="false" id="filter-lifestyle">Wardrobe
+            Care</button>
+        </div>
+
+        <div class="jn-articles-grid" id="jn-articles-grid" role="list">
+
+          <article class="jn-article-card" data-category="garment-care" role="listitem" id="card-lavender-diaries"
+            onclick="openJournal('cashmere-wool-preservation')" tabindex="0"
+            onkeydown="if(event.key==='Enter')openJournal('cashmere-wool-preservation')"
+            aria-label="Read: The Art of Cashmere &amp; Wool Preservation">
+            <div class="jn-card-img-wrap">
+              <img src="assets/about-garment-care.jpg" alt="Master conservator inspecting fine cashmere and wool" class="jn-card-real-img" />
+              <span class="jn-card-badge">Garment Care</span>
+              <div class="jn-card-hover-icon" aria-hidden="true"><i data-lucide="arrow-right" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="jn-card-body">
+              <div class="jn-card-meta">
+                <span><i data-lucide="calendar" aria-hidden="true"></i> Aug 15, 2026</span>
+                <span class="jn-meta-dot">•</span>
+                <span><i data-lucide="clock" aria-hidden="true"></i> 8 min read</span>
+              </div>
+              <h3 class="jn-card-title">The Art of Cashmere &amp; Wool Preservation</h3>
+              <p class="jn-card-excerpt">How to care for fine merino and pure cashmere garments — from temperature-controlled cleaning to cedar storage and pill prevention.</p>
+              <div class="jn-card-footer">
+                <div class="jn-card-author">
+                  <img src="assets/founder1.jpg" alt="Amara Silva" class="jn-author-avatar-img" />
+                  <span>Amara Silva</span>
+                </div>
+                <span class="jn-card-read-link">Read <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="jn-article-card jn-card-wide" data-category="science" role="listitem"
+            id="card-rosehip-science" onclick="openJournal('closed-loop-dry-cleaning-science')" tabindex="0"
+            onkeydown="if(event.key==='Enter')openJournal('closed-loop-dry-cleaning-science')"
+            aria-label="Read: Why Closed-Loop Dry Cleaning Protects Couture Silks">
+            <div class="jn-card-img-wrap">
+              <img src="assets/about-sustainability.jpg" alt="Eco dry cleaning garment care facility" class="jn-card-real-img" />
+              <span class="jn-card-badge jn-badge-science">Textile Science</span>
+              <div class="jn-card-hover-icon" aria-hidden="true"><i data-lucide="arrow-right" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="jn-card-body">
+              <div class="jn-card-meta">
+                <span><i data-lucide="calendar" aria-hidden="true"></i> Aug 10, 2026</span>
+                <span class="jn-meta-dot">•</span>
+                <span><i data-lucide="clock" aria-hidden="true"></i> 6 min read</span>
+              </div>
+              <h3 class="jn-card-title">Why Closed-Loop Dry Cleaning Protects Couture Silks</h3>
+              <p class="jn-card-excerpt">Understanding the chemistry of GreenEarth® liquid silicone: why perchloroethylene-free cleaning preserves fiber luster and drape.</p>
+              <div class="jn-card-footer">
+                <div class="jn-card-author">
+                  <img src="assets/founder2.jpg" alt="Dr. Nadia Chen" class="jn-author-avatar-img" />
+                  <span>Dr. Nadia Chen</span>
+                </div>
+                <span class="jn-card-read-link">Read <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="jn-article-card" data-category="ironing" role="listitem" id="card-morning-ritual"
+            onclick="openJournal('cotton-shrinkage-and-ironing')" tabindex="0"
+            onkeydown="if(event.key==='Enter')openJournal('cotton-shrinkage-and-ironing')"
+            aria-label="Read: Mastering Cotton Shrinkage &amp; Steam Ironing">
+            <div class="jn-card-img-wrap">
+              <img src="assets/laundry-steam-iron.jpg" alt="Professional steam ironing pressing" class="jn-card-real-img" />
+              <span class="jn-card-badge jn-badge-ritual">Steam Pressing</span>
+              <div class="jn-card-hover-icon" aria-hidden="true"><i data-lucide="arrow-right" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="jn-card-body">
+              <div class="jn-card-meta">
+                <span><i data-lucide="calendar" aria-hidden="true"></i> Aug 5, 2026</span>
+                <span class="jn-meta-dot">•</span>
+                <span><i data-lucide="clock" aria-hidden="true"></i> 4 min read</span>
+              </div>
+              <h3 class="jn-card-title">Mastering Cotton Shrinkage &amp; Professional Steam Ironing</h3>
+              <p class="jn-card-excerpt">The physical mechanics of woven Egyptian cotton yarns, water tension, and Italian steam finishing techniques for crease-free wear.</p>
+              <div class="jn-card-footer">
+                <div class="jn-card-author">
+                  <img src="assets/founder3.jpg" alt="Aria Thorne" class="jn-author-avatar-img" />
+                  <span>Aria Thorne</span>
+                </div>
+                <span class="jn-card-read-link">Read <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="jn-article-card" data-category="lifestyle" role="listitem" id="card-cold-process"
+            onclick="openJournal('curtain-and-interior-textile-care')" tabindex="0"
+            onkeydown="if(event.key==='Enter')openJournal('curtain-and-interior-textile-care')"
+            aria-label="Read: Restoring Drapery: Cleaning Linen &amp; Velvet Curtains">
+            <div class="jn-card-img-wrap">
+              <img src="assets/journal-linen-care.jpg" alt="Curtain cleaning and household fabric care" class="jn-card-real-img" />
+              <span class="jn-card-badge jn-badge-diy">Home Living</span>
+              <div class="jn-card-hover-icon" aria-hidden="true"><i data-lucide="arrow-right" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="jn-card-body">
+              <div class="jn-card-meta">
+                <span><i data-lucide="calendar" aria-hidden="true"></i> Jul 28, 2026</span>
+                <span class="jn-meta-dot">•</span>
+                <span><i data-lucide="clock" aria-hidden="true"></i> 7 min read</span>
+              </div>
+              <h3 class="jn-card-title">Restoring Drapery: Cleaning Linen &amp; Velvet Curtains</h3>
+              <p class="jn-card-excerpt">Household drapery traps dust, pollen, and UV oxidation. Here is our step-by-step restoration process for delicate window treatments.</p>
+              <div class="jn-card-footer">
+                <div class="jn-card-author">
+                  <img src="assets/founder1.jpg" alt="Amara Silva" class="jn-author-avatar-img" />
+                  <span>Amara Silva</span>
+                </div>
+                <span class="jn-card-read-link">Read <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="jn-article-card" data-category="garment-care" role="listitem" id="card-slow-beauty"
+            onclick="openJournal('delicate-lingerie-and-lace-care')" tabindex="0"
+            onkeydown="if(event.key==='Enter')openJournal('delicate-lingerie-and-lace-care')"
+            aria-label="Read: Couture Lingerie &amp; Delicate Lace: Washing Protocols">
+            <div class="jn-card-img-wrap">
+              <img src="assets/process-washing.jpg" alt="Couture delicate gentle eco-wash care" class="jn-card-real-img" />
+              <span class="jn-card-badge jn-badge-lifestyle">Couture Care</span>
+              <div class="jn-card-hover-icon" aria-hidden="true"><i data-lucide="arrow-right" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="jn-card-body">
+              <div class="jn-card-meta">
+                <span><i data-lucide="calendar" aria-hidden="true"></i> Jul 22, 2026</span>
+                <span class="jn-meta-dot">•</span>
+                <span><i data-lucide="clock" aria-hidden="true"></i> 5 min read</span>
+              </div>
+              <h3 class="jn-card-title">Couture Lingerie &amp; Delicate Lace: Washing Protocols</h3>
+              <p class="jn-card-excerpt">Protecting silk slips, lace underpinnings, and sheer garments with gentle botanical enzyme bathes and low-temperature air-drying.</p>
+              <div class="jn-card-footer">
+                <div class="jn-card-author">
+                  <img src="assets/founder2.jpg" alt="Dr. Nadia Chen" class="jn-author-avatar-img" />
+                  <span>Dr. Nadia Chen</span>
+                </div>
+                <span class="jn-card-read-link">Read <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="jn-article-card" data-category="dry-cleaning" role="listitem" id="card-shea-butter"
+            onclick="openJournal('sustainable-wardrobe-longevity')" tabindex="0"
+            onkeydown="if(event.key==='Enter')openJournal('sustainable-wardrobe-longevity')"
+            aria-label="Read: Extending Wardrobe Lifespans with Eco-Conscious Laundry">
+            <div class="jn-card-img-wrap">
+              <img src="assets/about-atelier-hero.jpg" alt="Sustainable modern garment laundry atelier" class="jn-card-real-img" />
+              <span class="jn-card-badge">Dry Cleaning</span>
+              <div class="jn-card-hover-icon" aria-hidden="true"><i data-lucide="arrow-right" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="jn-card-body">
+              <div class="jn-card-meta">
+                <span><i data-lucide="calendar" aria-hidden="true"></i> Jul 15, 2026</span>
+                <span class="jn-meta-dot">•</span>
+                <span><i data-lucide="clock" aria-hidden="true"></i> 7 min read</span>
+              </div>
+              <h3 class="jn-card-title">Extending Wardrobe Lifespans with Eco-Conscious Laundry</h3>
+              <p class="jn-card-excerpt">Why frequent gentle washing at 30°C and biodegradable neutral-pH soaps preserve fabric structure 3x longer than harsh detergents.</p>
+              <div class="jn-card-footer">
+                <div class="jn-card-author">
+                  <img src="assets/founder3.jpg" alt="Aria Thorne" class="jn-author-avatar-img" />
+                  <span>Aria Thorne</span>
+                </div>
+                <span class="jn-card-read-link">Read <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="jn-load-more-wrap">
+          <button class="jn-load-more-btn" id="jn-load-more" onclick="loadMoreArticles()">
+            <span>Explore More Stories</span>
+            <i data-lucide="chevron-down" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="jn-faq" id="journal-faq" aria-labelledby="jn-faq-heading">
+      <div class="container">
+        <div class="jn-section-header">
+          <p class="section-eyebrow">
+            <span class="eyebrow-sparkle"><i data-lucide="help-circle" aria-hidden="true"></i></span>
+            Got Questions?
+          </p>
+          <h2 class="jn-section-title" id="jn-faq-heading">Frequently Asked Questions</h2>
+          <p class="jn-section-desc">Everything you need to know about our fabric care guides, closed-loop solvents, and garment longevity guidance.</p>
+        </div>
+
+        <div class="jn-faq-container">
+
+          <div class="jn-faq-item active">
+            <button class="jn-faq-trigger" onclick="toggleFaq(this)" aria-expanded="true">
+              <span class="jn-faq-question">How often are new fabric care guides published?</span>
+              <span class="jn-faq-icon"><i data-lucide="chevron-down" aria-hidden="true"></i></span>
+            </button>
+            <div class="jn-faq-content" style="max-height: 200px;">
+              <p class="jn-faq-answer">We publish new textile care deep-dives, stain removal protocols, and seasonal wardrobe storage guides every Tuesday morning. Subscribers receive early access in their email inbox.</p>
+            </div>
+          </div>
+
+          <div class="jn-faq-item">
+            <button class="jn-faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="jn-faq-question">Are the cleaning tips backed by textile conservators?</span>
+              <span class="jn-faq-icon"><i data-lucide="chevron-down" aria-hidden="true"></i></span>
+            </button>
+            <div class="jn-faq-content">
+              <p class="jn-faq-answer">Yes. Every article is written or reviewed by our team of master garment conservators, cleaning chemists, and certified pressers, blending traditional fabric heritage with modern green-solvent science.</p>
+            </div>
+          </div>
+
+          <div class="jn-faq-item">
+            <button class="jn-faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="jn-faq-question">Can I submit a fabric or stain question to your team?</span>
+              <span class="jn-faq-icon"><i data-lucide="chevron-down" aria-hidden="true"></i></span>
+            </button>
+            <div class="jn-faq-content">
+              <p class="jn-faq-answer">Absolutely. We welcome inquiries regarding vintage silks, stubborn stains, or specialized knitwear. Submit your question via our Contact page or message care@washaura.com.</p>
+            </div>
+          </div>
+
+          <div class="jn-faq-item">
+            <button class="jn-faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="jn-faq-question">What makes WashAura's cleaning chemistry unique?</span>
+              <span class="jn-faq-icon"><i data-lucide="chevron-down" aria-hidden="true"></i></span>
+            </button>
+            <div class="jn-faq-content">
+              <p class="jn-faq-answer">We clean with 100% perchloroethylene-free GreenEarth® liquid silicone and plant-based biodegradable enzymes. This gentle approach cleans down to the micro-fiber without chemical harshness or synthetic petroleum residue.</p>
+            </div>
+          </div>
+
+          <div class="jn-faq-item">
+            <button class="jn-faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="jn-faq-question">How do I choose between Dry Cleaning and Wash &amp; Fold?</span>
+              <span class="jn-faq-icon"><i data-lucide="chevron-down" aria-hidden="true"></i></span>
+            </button>
+            <div class="jn-faq-content">
+              <p class="jn-faq-answer">Review the care label on your garment or consult our Fabric Care guides. If in doubt, choose 'Master Cleaner Inspection' when scheduling your pickup, and our specialists will automatically route each item to its optimal cleaning process.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="jn-newsletter" id="journal-newsletter" aria-labelledby="jn-newsletter-heading">
+      <div class="container">
+
+        <div class="jn-cta-luxury-card">
+
+          <div class="jn-cta-card-orbs" aria-hidden="true">
+            <div class="jn-cta-orb jn-cta-orb-1"></div>
+            <div class="jn-cta-orb jn-cta-orb-2"></div>
+          </div>
+
+          <div class="jn-cta-card-content">
+            <div class="jn-cta-header-pill">
+              <span class="jn-cta-pill-icon"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+              <span>WEEKLY GARMENT DISPATCH</span>
+            </div>
+
+            <h2 class="jn-newsletter-heading" id="jn-newsletter-heading">
+              Stories Delivered to<br /><span class="jn-nl-accent">Your Inbox</span>
+            </h2>
+
+            <p class="jn-newsletter-desc">
+              Join 12,000+ conscious readers who receive our weekly dispatches — new fabric care guides, seasonal wardrobe rituals, and exclusive laundry member perks.
+            </p>
+
+            <form class="jn-newsletter-form" id="jn-newsletter-form" onsubmit="handleNewsletterSubmit(event)"
+              novalidate>
+              <div class="jn-form-group">
+                <div class="jn-form-input-wrapper">
+                  <i data-lucide="mail" class="jn-input-icon" aria-hidden="true"></i>
+                  <input type="email" class="jn-nl-input" id="jn-email-input" placeholder="Enter your email address"
+                    aria-label="Enter your email address" required />
+                </div>
+                <button type="submit" class="jn-nl-submit" id="jn-nl-submit-btn">
+                  <span>Subscribe</span>
+                  <i data-lucide="arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+              <p class="jn-form-note">
+                <i data-lucide="shield-check" aria-hidden="true"></i>
+                Zero spam, ever. Unsubscribe at any time with one click.
+              </p>
+              <div class="jn-form-success" id="jn-form-success" aria-live="polite" hidden>
+                <i data-lucide="check-circle" aria-hidden="true"></i>
+                <span>Welcome to WashAura! Check your inbox for your first fabric care dispatch.</span>
+              </div>
+            </form>
+
+            <div class="jn-nl-trust-badges">
+              <div class="jn-trust-item"><i data-lucide="users" aria-hidden="true"></i><span>12,000+ Readers</span>
+              </div>
+              <div class="jn-trust-item"><i data-lucide="star" aria-hidden="true"></i><span>4.9/5 Rating</span></div>
+              <div class="jn-trust-item"><i data-lucide="heart" aria-hidden="true"></i><span>Free Forever</span></div>
+            </div>
+          </div>
+
+          <div class="jn-cta-card-visual" aria-hidden="true">
+            <div class="jn-cta-visual-ring"></div>
+            <div class="jn-cta-visual-img-box">
+              <img src="assets/laundry-wash-fold.jpg" alt="Pure garment care preview" class="jn-cta-visual-img" />
+              <div class="jn-cta-visual-overlay"></div>
+              <div class="jn-cta-visual-center-badge">
+                <i data-lucide="book-open" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="jn-cta-float-badge float-1"><i data-lucide="leaf" aria-hidden="true"></i> 100% Eco-Safe</div>
+            <div class="jn-cta-float-badge float-2"><i data-lucide="award" aria-hidden="true"></i> Editor's Pick</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-top-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo" aria-label="WashAura Home">
+          <div class="logo-mark" aria-hidden="true">
+            <img src="assets/logo.png" alt="WashAura Logo" class="logo-img" />
+          </div>
+          <div class="logo-text">
+            <span class="logo-name">WashAura</span>
+            <span class="logo-tagline">Pure Garment Care. Delivered to Your Door.</span>
+          </div>
+        </a>
+        <p class="footer-desc">Professional garment care with convenient doorstep pickup, reliable cleaning, and delivery. Handled with botanical chemistry and eco-safe dry cleaning.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="https://instagram.com" class="social-link" id="social-instagram" aria-label="Instagram"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://facebook.com" class="social-link" id="social-facebook" aria-label="Facebook" target="_blank"
+            rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="https://youtube.com" class="social-link" id="social-youtube" aria-label="YouTube" target="_blank"
+            rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+              </path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <nav class="footer-nav-col" aria-label="Explore navigation">
+        <h3 class="footer-col-title">Explore</h3>
+        <ul role="list">
+          <li><a href="index.html" class="footer-link">Home 1</a></li>
+          <li><a href="about.html" class="footer-link">About</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="journals.html" class="footer-link">Journals</a></li>
+          <li><a href="dashboard.html" class="footer-link">Dashboard</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav-col" aria-label="Customer care navigation">
+        <h3 class="footer-col-title">Customer Care</h3>
+        <ul role="list">
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="pricing.html#faqs" class="footer-link">Pickup Areas</a></li>
+          <li><a href="pricing.html#faqs" class="footer-link">Garment Care Guarantee</a></li>
+          <li><a href="pricing.html#faqs" class="footer-link">FAQs</a></li>
+          <li><a href="contact.html" class="footer-link">Privacy Policy</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav-col" aria-label="Additional information navigation">
+        <h3 class="footer-col-title">Additional Information</h3>
+        <ul role="list">
+          <li><a href="coming-soon.html" class="footer-link">Coming Soon</a></li>
+          <li><a href="404.html" class="footer-link">404</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h3 class="footer-col-title">Contact Details</h3>
+        <ul class="contact-list" role="list">
+          <li class="contact-item">
+            <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg></span>
+            <span class="contact-text">Central Garment Valet Atelier</span>
+          </li>
+          <li class="contact-item">
+            <a href="tel:9999988888" class="contact-link">
+              <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg></span>
+              <span class="contact-text">9999988888</span>
+            </a>
+          </li>
+          <li class="contact-item">
+            <a href="mailto:care@washaura.com" class="contact-link">
+              <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg></span>
+              <span class="contact-text">care@washaura.com</span>
+            </a>
+          </li>
+          <li class="contact-item">
+            <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg></span>
+            <span class="contact-text">Mon &ndash; Sat: 7:00 AM &ndash; 8:00 PM PST</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copy">&copy; 2026 WashAura. All Rights Reserved.</p>
+        <nav class="footer-legal" aria-label="Legal navigation">
+          <a href="#privacy" class="footer-legal-link">Privacy</a>
+          <span class="legal-dot">&bull;</span>
+          <a href="#terms" class="footer-legal-link">Terms</a>
+          <span class="legal-dot">&bull;</span>
+          <a href="#cookies" class="footer-legal-link">Cookies</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="home1.js" defer></script>
+  <script src="journals.js" defer></script>
+</body>
+
+</html>

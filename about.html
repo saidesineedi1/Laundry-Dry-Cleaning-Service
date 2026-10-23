@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="About WashAura — Discover our story, 6 core commitments, master textile team, and milestone timeline. Premium laundry and eco dry cleaning crafted with care." />
+  <meta name="keywords"
+    content="about WashAura, premium laundry service story, garment care team, eco dry cleaning timeline, laundry founders" />
+  <title>About Us — WashAura | Pure Garment Care. Delivered to Your Door.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="about.css" />
+</head>
+
+<body>
+
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header-inner container">
+
+      <a href="index.html" class="logo" aria-label="WashAura Home" id="logo-link">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/logo.png" alt="WashAura Logo" class="logo-img" />
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">WashAura</span>
+          <span class="logo-tagline">Pure Garment Care. Delivered to Your Door.</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list" role="list">
+          <li class="nav-item has-dropdown" id="nav-home-item">
+            <a href="index.html" class="nav-link nav-dropdown-trigger" id="nav-home" aria-expanded="false"
+              aria-haspopup="true">
+              <span>Home</span>
+              <i data-lucide="chevron-down" class="dropdown-chevron" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Home versions">
+              <a href="index.html" class="dropdown-item" role="menuitem">
+                <div class="dropdown-item-icon">
+                  <i data-lucide="sparkles" aria-hidden="true"></i>
+                </div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-header">
+                    <span class="dropdown-item-title">Home 1</span>
+                    <span class="dropdown-badge">Current</span>
+                  </div>
+                  <span class="dropdown-item-desc">WashAura &bull; Premium Laundry Valet</span>
+                </div>
+              </a>
+              <a href="home2.html" class="dropdown-item" role="menuitem">
+                <div class="dropdown-item-icon icon-ayurveda">
+                  <i data-lucide="leaf" aria-hidden="true"></i>
+                </div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-header">
+                    <span class="dropdown-item-title">Home 2</span>
+                    <span class="dropdown-badge badge-alt">New</span>
+                  </div>
+                  <span class="dropdown-item-desc">PureCare &bull; Eco Botanical Laundry</span>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li><a href="about.html" class="nav-link active" id="nav-about">About</a></li>
+          <li><a href="services.html" class="nav-link" id="nav-services">Services</a></li>
+          <li><a href="journals.html" class="nav-link" id="nav-journal">Journal</a></li>
+          <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link" id="nav-dashboard">Dashboard</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions" role="toolbar" aria-label="Site actions">
+        <button class="toggle-btn rtl-toggle" id="rtl-toggle" aria-label="Toggle text direction" aria-pressed="false"
+          title="Switch text direction (RTL / LTR)">
+          <span class="toggle-label">RTL</span></button>
+
+        <button class="toggle-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"
+          title="Toggle light and dark mode">
+          <span class="theme-icon sun-icon"><i data-lucide="sun" aria-hidden="true"></i></span>
+          <span class="theme-icon moon-icon"><i data-lucide="moon" aria-hidden="true"></i></span>
+        </button>
+
+        <a href="login.html" class="btn btn-primary nav-login-btn" id="nav-login-btn">Login</a>
+
+        <button class="hamburger" id="hamburger-btn" aria-label="Open mobile menu" aria-expanded="false"
+          aria-controls="main-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
+      <div class="search-inner">
+        <div class="search-input-box">
+          <i data-lucide="search" class="search-input-icon" aria-hidden="true"></i>
+          <input type="search" class="search-input" id="search-input"
+            placeholder="Search wash &amp; fold, dry cleaning, steam pressing..." aria-label="Search laundry services"
+            autocomplete="off" />
+          <button class="search-close" id="search-close" aria-label="Close search">
+            <i data-lucide="x" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="search-suggestions" id="search-suggestions">
+          <span class="sugg-label">Popular Searches:</span>
+          <button class="sugg-pill" data-query="Wash &amp; Fold">Wash &amp; Fold</button>
+          <button class="sugg-pill" data-query="Dry Cleaning">Dry Cleaning</button>
+          <button class="sugg-pill" data-query="Steam Ironing">Steam Ironing</button>
+          <button class="sugg-pill" data-query="Curtains">Curtains</button>
+        </div>
+        <div class="search-results-list" id="search-results-list"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-header">
+      <span class="logo-name">WashAura</span>
+      <button class="icon-btn mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item has-dropdown" id="mobile-nav-home-item">
+        <button class="mobile-nav-link mobile-dropdown-btn" id="mobile-home-toggle" aria-expanded="false">
+          <span>Home</span>
+          <i data-lucide="chevron-down" class="mobile-dropdown-chevron" aria-hidden="true"></i>
+        </button>
+        <ul class="mobile-submenu" id="mobile-home-submenu">
+          <li>
+            <a href="index.html" class="mobile-sublink">
+              <i data-lucide="sparkles" aria-hidden="true"></i>
+              <span>Home 1 (WashAura)</span>
+            </a>
+          </li>
+          <li>
+            <a href="home2.html" class="mobile-sublink">
+              <i data-lucide="leaf" aria-hidden="true"></i>
+              <span>Home 2 (PureCare)</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="about.html" class="mobile-nav-link active">About</a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="journals.html" class="mobile-nav-link">Journal</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+      <li class="mobile-nav-login-item">
+        <a href="login.html" class="btn btn-primary mobile-menu-login-btn" id="mobile-drawer-login-btn">
+          <span>Login</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="mobile-drawer-actions">
+      <div class="mobile-actions-grid">
+        <button class="mobile-action-card cart-action-card"
+          onclick="if(typeof openCartDrawer==='function')openCartDrawer();" aria-label="Open Pickup Valet Bag">
+          <div class="mobile-card-icon-wrap">
+            <i data-lucide="shopping-bag" aria-hidden="true"></i>
+            <span class="mobile-cart-badge cart-count-badge">0</span>
+          </div>
+          <div class="mobile-card-text">
+            <span class="mobile-card-title">Pickup Bag</span>
+            <span class="mobile-card-sub">View Items</span>
+          </div>
+        </button>
+        <a href="dashboard.html" class="mobile-action-card account-action-card" aria-label="Go to Member Dashboard">
+          <div class="mobile-card-icon-wrap user-icon-wrap">
+            <i data-lucide="user" aria-hidden="true"></i>
+          </div>
+          <div class="mobile-card-text">
+            <span class="mobile-card-title">Member Portal</span>
+            <span class="mobile-card-sub">Account &amp; Orders</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <p class="mobile-nav-tagline">“Pure Garment Care. Delivered to Your Door.”</p>
+    </div>
+  </div>
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Pickup Bag" hidden>
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">
+        <i data-lucide="shopping-bag" aria-hidden="true"></i>
+        <h2>Your Valet Pickup Bag</h2>
+        <span class="cart-drawer-count">(<span id="drawer-item-count">0</span> items)</span>
+      </div>
+      <button class="cart-drawer-close" id="cart-drawer-close" aria-label="Close pickup bag">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="cart-drawer-body" id="cart-drawer-body">
+      <div class="cart-empty" id="cart-empty">
+        <div class="cart-empty-icon">
+          <i data-lucide="sparkles" aria-hidden="true"></i>
+        </div>
+        <p class="cart-empty-text">Your valet pickup bag is currently empty.</p>
+        <p class="cart-empty-sub">Explore our artisan laundry, dry cleaning, and garment care services.</p>
+        <a href="services.html" class="btn btn-primary btn-sm" id="cart-empty-cta">Discover Services</a>
+      </div>
+      <div class="cart-items-list" id="cart-items-list"></div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span>Estimated Total</span>
+        <span class="cart-subtotal" id="cart-subtotal">$0.00</span>
+      </div>
+      <p class="cart-shipping-note">Complimentary doorstep pickup and delivery on all orders over $35.</p>
+      <button class="btn btn-primary btn-full" id="cart-checkout-btn">
+        Schedule Pickup Now
+        <i data-lucide="arrow-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </aside>
+  <div class="cart-drawer-backdrop" id="cart-drawer-backdrop" aria-hidden="true"></div>
+
+  <main id="main-content">
+
+    <section class="about-hero" id="about-hero" aria-labelledby="about-hero-heading">
+
+      <div class="hero-mesh-bg" aria-hidden="true">
+        <div class="hero-glow-blob glow-sage"></div>
+        <div class="hero-glow-blob glow-lavender"></div>
+        <div class="hero-glow-blob glow-cream"></div>
+      </div>
+
+      <div class="container about-hero-inner">
+
+        <div class="about-hero-content">
+          <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+          </nav>
+
+          <div class="hero-eyebrow-wrapper">
+            <span class="eyebrow-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+            <p class="hero-eyebrow">PREMIUM LAUNDRY &amp; DRY CLEANING &bull; GARMENT ATELIER</p>
+          </div>
+
+          <h1 class="hero-heading" id="about-hero-heading">
+            Rooted in Precision.<br />
+            <em>Crafted with Intent.</em>
+          </h1>
+
+          <p class="hero-body">
+            We are a premier garment care atelier dedicated to extending fabric longevity, using non-toxic eco-friendly
+            solvents, artisan steam pressing, and effortless doorstep pickup rituals for modern living.
+          </p>
+
+          <div class="about-hero-pills">
+            <div class="hero-pill-badge">
+              <i data-lucide="sparkles" aria-hidden="true"></i>
+              <span>100% Non-Toxic &amp; PERC-Free</span>
+            </div>
+            <div class="hero-pill-badge">
+              <i data-lucide="shield-check" aria-hidden="true"></i>
+              <span>Zero Fabric Shrinkage</span>
+            </div>
+          </div>
+
+          <div class="hero-actions-group">
+            <a href="#story" class="btn btn-primary" id="hero-btn-story">
+              Discover Our Journey
+              <i data-lucide="arrow-down" class="btn-icon" aria-hidden="true"></i>
+            </a>
+            <a href="services.html" class="btn btn-outline" id="hero-btn-shop">
+              Explore Services
+            </a>
+          </div>
+        </div>
+
+        <div class="about-hero-visual">
+          <div class="unique-visual-stack">
+
+            <div class="hero-main-card">
+              <img src="assets/about-atelier-hero.jpg"
+                alt="Artisans caring for luxury textiles in sunlit WashAura atelier" class="hero-main-img"
+                loading="eager" />
+              <div class="hero-main-overlay"></div>
+              <div class="hero-live-tag">
+                <span class="live-dot"></span>
+                <span>WashAura Garment Atelier &bull; Handcrafted Daily</span>
+              </div>
+            </div>
+
+            <div class="hero-sub-card">
+              <img src="assets/about-folded-linens.jpg" alt="Neatly stacked and tied freshly laundered linen towels"
+                class="hero-sub-img" loading="lazy" />
+            </div>
+
+            <div class="hero-rotating-badge" aria-label="Artisan Heritage Craft">
+              <div class="badge-ring-box">
+                <svg viewBox="0 0 130 130" class="badge-svg-ring" aria-hidden="true">
+                  <path id="unique-badge-path" d="M 65,65 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0" fill="none" />
+                  <text font-size="9.2" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="3.0"
+                    fill="currentColor" font-weight="600">
+                    <textPath href="#unique-badge-path" startOffset="0%">
+                      ARTISAN &bull; TEXTILE &bull; CARE &bull;
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="badge-center-icon">
+                  <i data-lucide="sparkles" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-story-section" id="story" aria-labelledby="story-heading">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-visual-col">
+            <div class="story-card-composition">
+              <div class="story-img-main-wrap">
+                <img src="assets/about-sustainability.jpg"
+                  alt="State of the art eco-clean closed loop garment care facility" class="story-img-main"
+                  loading="lazy" />
+              </div>
+              <div class="story-img-sub-wrap">
+                <img src="assets/about-garment-care.jpg"
+                  alt="Master garment conservator inspecting fabric weave and tailoring" class="story-img-sub"
+                  loading="lazy" />
+              </div>
+              <div class="story-floating-card">
+                <div class="story-float-icon"><i data-lucide="shield-check" aria-hidden="true"></i></div>
+                <div class="story-float-text">
+                  <strong>48-Hour Precision Care</strong>
+                  <span>Closed-Loop Cleaning System</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-content-col">
+            <p class="section-eyebrow">
+              <span class="eyebrow-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+              Our Origin Story
+            </p>
+            <h2 class="section-title" id="story-heading">From an Artisan Workshop to <em>Your Daily Wardrobe</em></h2>
+
+            <p class="about-body">
+              WashAura began from a simple conviction: your most cherished garments deserve the same gentle, thoughtful
+              care as your skin. Frustrated by harsh industrial chemicals, unpleasant petrochemical fumes, and careless
+              mass-processing, our founders set out to create a higher standard of garment care.
+            </p>
+            <p class="about-body">
+              We paired gentle plant-based detergents and closed-loop silicone dry cleaning with artisan steam finishing
+              and punctual doorstep pickup. Today, our philosophy remains unchanged: every collared shirt, delicate silk
+              dress, and set of sheets is treated with individualized fiber care and delivered fresh to your door.
+            </p>
+
+            <div class="story-highlights">
+              <div class="story-highlight-item">
+                <div class="highlight-num">2018</div>
+                <div class="highlight-label">Founded Boutique Atelier</div>
+              </div>
+              <div class="story-highlight-item">
+                <div class="highlight-num">100%</div>
+                <div class="highlight-label">Non-Toxic Eco Solvents</div>
+              </div>
+              <div class="story-highlight-item">
+                <div class="highlight-num">18K+</div>
+                <div class="highlight-label">Garments Preserved</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-timeline-section" id="timeline" aria-labelledby="timeline-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-eyebrow">
+            <span class="eyebrow-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+            Our Journey &amp; Growth
+          </p>
+          <h2 class="section-title" id="timeline-heading">Milestones of <em>Artisan Garment Care</em></h2>
+          <p class="section-subtitle">
+            From humble beginnings as a boutique garment studio to an acclaimed eco-friendly laundry and dry cleaning
+            valet.
+          </p>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-track-line" aria-hidden="true"></div>
+
+          <div class="timeline-nodes-list">
+
+            <article class="timeline-card-item timeline-left">
+              <div class="timeline-year-node">
+                <span>2018</span>
+              </div>
+              <div class="timeline-content-box">
+                <div class="timeline-meta-row">
+                  <span class="timeline-tag">Foundation</span>
+                  <span class="timeline-location"><i data-lucide="map-pin" aria-hidden="true"></i> Boutique
+                    Atelier</span>
+                </div>
+                <h3 class="timeline-title">The Boutique Laundry Atelier</h3>
+                <p class="timeline-desc">
+                  WashAura is born with three master pressers offering bespoke collared shirt finishing, delicate linen
+                  wash, and artisanal fiber care.
+                </p>
+                <div class="timeline-highlights-pills">
+                  <span>3 Master Pressers</span>
+                  <span>Gentle Wash Protocols</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-card-item timeline-right">
+              <div class="timeline-year-node">
+                <span>2020</span>
+              </div>
+              <div class="timeline-content-box">
+                <div class="timeline-meta-row">
+                  <span class="timeline-tag">Expansion</span>
+                  <span class="timeline-location"><i data-lucide="sun" aria-hidden="true"></i> Modern Facility</span>
+                </div>
+                <h3 class="timeline-title">Closed-Loop Eco Dry Cleaning</h3>
+                <p class="timeline-desc">
+                  Eliminated harsh petrochemical PERC, transitioning exclusively to closed-loop silicone solvents that
+                  protect silks, suits, and cashmeres.
+                </p>
+                <div class="timeline-highlights-pills">
+                  <span>Non-Toxic Silicone</span>
+                  <span>Zero PERC Fumes</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-card-item timeline-left">
+              <div class="timeline-year-node">
+                <span>2022</span>
+              </div>
+              <div class="timeline-content-box">
+                <div class="timeline-meta-row">
+                  <span class="timeline-tag">Innovation</span>
+                  <span class="timeline-location"><i data-lucide="shield-check" aria-hidden="true"></i> Valet
+                    Network</span>
+                </div>
+                <h3 class="timeline-title">Doorstep Pickup &amp; Delivery</h3>
+                <p class="timeline-desc">
+                  Launched scheduled contactless doorstep pickup with custom breathable garment covers, live status
+                  tracking, and member subscription plans.
+                </p>
+                <div class="timeline-highlights-pills">
+                  <span>Doorstep Valet</span>
+                  <span>Reusable Garment Bags</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-card-item timeline-right">
+              <div class="timeline-year-node">
+                <span>2024</span>
+              </div>
+              <div class="timeline-content-box">
+                <div class="timeline-meta-row">
+                  <span class="timeline-tag">Recognition</span>
+                  <span class="timeline-location"><i data-lucide="award" aria-hidden="true"></i> Award Winner</span>
+                </div>
+                <h3 class="timeline-title">Garment Care Atelier of the Year</h3>
+                <p class="timeline-desc">
+                  Recognized for sustainable fabric preservation and customer excellence, completing over 18,000 pickups
+                  with a 99.8% customer satisfaction rate.
+                </p>
+                <div class="timeline-highlights-pills">
+                  <span>Top Valet Award</span>
+                  <span>18,000+ Wardrobes</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-card-item timeline-left">
+              <div class="timeline-year-node node-highlight">
+                <span>2026</span>
+              </div>
+              <div class="timeline-content-box box-highlight">
+                <div class="timeline-meta-row">
+                  <span class="timeline-tag tag-green">Eco Pledge</span>
+                  <span class="timeline-location"><i data-lucide="leaf" aria-hidden="true"></i> Sustainability</span>
+                </div>
+                <h3 class="timeline-title">Zero-Waste Packaging Initiative</h3>
+                <p class="timeline-desc">
+                  Instituted 100% metal hanger recycling, zero single-use plastic films, plant-based non-toxic
+                  detergents, and optimized low-emission delivery fleets.
+                </p>
+                <div class="timeline-highlights-pills">
+                  <span>Zero-Waste Hangers</span>
+                  <span>100% Eco Fleet</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-team-section" id="team" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-eyebrow">
+            <span class="eyebrow-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+            Our Leadership &amp; Founders
+          </p>
+          <h2 class="section-title" id="team-heading">Meet Our <em>3 Team Members</em></h2>
+          <p class="section-subtitle">
+            The experienced textile conservators, green cleaning chemists, and logistics directors behind WashAura.
+          </p>
+        </div>
+
+        <div class="team-grid-3">
+
+          <article class="team-card-photo">
+            <div class="team-photo-wrap">
+              <img src="assets/team-amara-silva.jpg"
+                alt="Amara Silva - Co-Founder &amp; Master Conservator inspecting couture fabric" class="team-photo-img"
+                loading="lazy" />
+              <div class="team-photo-overlay"></div>
+              <span class="team-badge-tag"><i data-lucide="sparkles" aria-hidden="true"></i> Co-Founder &amp; Master
+                Conservator</span>
+            </div>
+            <div class="team-details">
+              <h3 class="team-person-name">Amara Silva</h3>
+              <p class="team-person-title">Head of Textile Preservation &amp; Restoration</p>
+              <p class="team-person-bio">
+                With 15+ years studying haute couture preservation and historic fabrics, Amara oversees fiber integrity,
+                stain release chemistry, and couture finishings.
+              </p>
+              <div class="team-specialty-tags">
+                <span>Textile Science</span>
+                <span>Couture Care</span>
+                <span>Fiber Revival</span>
+              </div>
+              <div class="team-social-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                  aria-label="Amara's Instagram">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                  </svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Amara's LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect width="4" height="12" x="2" y="9" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </a>
+                <a href="mailto:amara@washaura.com" aria-label="Email Amara">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="team-card-photo">
+            <div class="team-photo-wrap">
+              <img src="assets/about-garment-care.jpg" alt="Nadia Chen - Co-Founder &amp; Master Cleaning Chemist"
+                class="team-photo-img" loading="lazy" />
+              <div class="team-photo-overlay"></div>
+              <span class="team-badge-tag badge-sage"><i data-lucide="flask-conical" aria-hidden="true"></i> Master
+                Cleaning Chemist</span>
+            </div>
+            <div class="team-details">
+              <h3 class="team-person-name">Nadia Chen</h3>
+              <p class="team-person-title">Co-Founder &amp; Chief Eco-Formulator</p>
+              <p class="team-person-bio">
+                A cleaning chemist with 12 years formulating non-toxic detergents, Nadia engineers our plant-based
+                enzymes and closed-loop silicone solvent protocols.
+              </p>
+              <div class="team-specialty-tags">
+                <span>Green Chemistry</span>
+                <span>Enzyme Science</span>
+                <span>pH Neutral</span>
+              </div>
+              <div class="team-social-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                  aria-label="Nadia's Instagram">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                  </svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Nadia's LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect width="4" height="12" x="2" y="9" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </a>
+                <a href="mailto:nadia@washaura.com" aria-label="Email Nadia">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="team-card-photo">
+            <div class="team-photo-wrap">
+              <img src="assets/team-aria-thorne.jpg" alt="Aria Thorne - Director of Valet Operations &amp; Logistics"
+                class="team-photo-img" loading="lazy" />
+              <div class="team-photo-overlay"></div>
+              <span class="team-badge-tag badge-gold"><i data-lucide="truck" aria-hidden="true"></i> Valet Operations
+                Director</span>
+            </div>
+            <div class="team-details">
+              <h3 class="team-person-name">Aria Thorne</h3>
+              <p class="team-person-title">Director of Valet Operations &amp; Logistics</p>
+              <p class="team-person-bio">
+                Directs our carbon-neutral valet fleet, precision garment barcoding, temperature-controlled transit, and
+                reusable
+                breathable canvas carrier systems.
+              </p>
+              <div class="team-specialty-tags">
+                <span>Doorstep Valet</span>
+                <span>Garment Tracking</span>
+                <span>Fleet Logistics</span>
+              </div>
+              <div class="team-social-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Aria's Instagram">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                  </svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Aria's LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect width="4" height="12" x="2" y="9" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </a>
+                <a href="mailto:aria@washaura.com" aria-label="Email Aria">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about-values-section" id="values" aria-labelledby="values-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-eyebrow">
+            <span class="eyebrow-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+            Guiding Principles &amp; Standards
+          </p>
+          <h2 class="section-title" id="values-heading">Our 6 Core Commitments <em>to You &amp; Your Wardrobe</em></h2>
+          <p class="section-subtitle">
+            We operate with zero compromise across textile longevity, closed-loop solvents, and meticulous garment care.
+          </p>
+        </div>
+
+        <div class="values-grid-6">
+
+          <div class="value-card">
+            <div class="value-icon-box box-sage">
+              <i data-lucide="leaf" aria-hidden="true"></i>
+            </div>
+            <span class="value-number">01</span>
+            <h3 class="value-title">Botanical &amp; Hypoallergenic</h3>
+            <p class="value-desc">
+              We wash exclusively with plant-based enzymes and organic extracts that dissolve soil while protecting
+              sensitive skin and fabric weaves.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon-box box-lavender">
+              <i data-lucide="flask-conical" aria-hidden="true"></i>
+            </div>
+            <span class="value-number">02</span>
+            <h3 class="value-title">Closed-Loop Solvents</h3>
+            <p class="value-desc">
+              Our hospital-grade GreenEarth® liquid silicone dry-cleaning system continuously purifies and recycles
+              solvents with zero VOC emissions.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon-box box-gold">
+              <i data-lucide="heart" aria-hidden="true"></i>
+            </div>
+            <span class="value-number">03</span>
+            <h3 class="value-title">Fiber Integrity Guarantee</h3>
+            <p class="value-desc">
+              Customized drum agitation cycles and gentle Italian tensioning steam irons preserve the weave, drape, and
+              luster of couture fabrics.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon-box box-blue">
+              <i data-lucide="package-check" aria-hidden="true"></i>
+            </div>
+            <span class="value-number">04</span>
+            <h3 class="value-title">Earth-First Packaging</h3>
+            <p class="value-desc">
+              Garments return in reusable breathable canvas valets, acid-free tissue liners, and recycled cedar hanger
+              loops with zero single-use plastics.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon-box box-rose">
+              <i data-lucide="sparkles" aria-hidden="true"></i>
+            </div>
+            <span class="value-number">05</span>
+            <h3 class="value-title">Seamless Valet Convenience</h3>
+            <p class="value-desc">
+              Effortless 2-hour doorstep pickup windows, real-time valet tracking, barcode garment security, and
+              reliable 48-hour delivery.
+            </p>
+          </div>
+
+          <div class="value-card value-card-6">
+            <div class="value-icon-box box-teal">
+              <i data-lucide="globe" aria-hidden="true"></i>
+            </div>
+            <span class="value-number">06</span>
+            <h3 class="value-title">Living Wage Operations</h3>
+            <p class="value-desc">
+              All master cleaners, pressers, and valet drivers are direct team members receiving certified living wages
+              and continuous master textile training.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about-mini-cta-section" aria-label="Special Laundry Offer">
+      <div class="container">
+        <div class="about-rich-cta-card">
+          <div class="rich-cta-header">
+            <span class="mini-cta-badge"><i data-lucide="sparkles" aria-hidden="true"></i> EXCLUSIVE VALET PERK</span>
+            <span class="rich-cta-code">Use Code: <strong>CLEANAURA15</strong></span>
+          </div>
+          <div class="rich-cta-body-grid">
+            <div class="rich-cta-text-col">
+              <h3 class="rich-cta-title">Experience Couture Laundry Care Today</h3>
+              <p class="rich-cta-desc">Schedule your first doorstep pickup and discover why discerning wardrobes trust
+                WashAura for delicate silk care, cashmere revitalization, and everyday garment crispness.</p>
+              <div class="rich-cta-features">
+                <span class="rich-feature-item"><i data-lucide="check-circle-2" aria-hidden="true"></i> 100% Eco-Safe
+                  Cleaning</span>
+                <span class="rich-feature-item"><i data-lucide="check-circle-2" aria-hidden="true"></i> Closed-Loop
+                  Solvents</span>
+                <span class="rich-feature-item"><i data-lucide="check-circle-2" aria-hidden="true"></i> Free Doorstep
+                  Valet</span>
+                <span class="rich-feature-item"><i data-lucide="check-circle-2" aria-hidden="true"></i> 48-Hour Return
+                  Delivery</span>
+              </div>
+            </div>
+            <div class="rich-cta-action-col">
+              <a href="pricing.html" class="btn btn-primary" id="about-page-cta-link">
+                <span>Schedule Your First Pickup</span>
+                <i data-lucide="arrow-right" class="btn-icon" aria-hidden="true"></i>
+              </a>
+              <div class="rich-cta-rating">
+                <span class="rating-stars">★★★★★</span>
+                <span class="rating-text">4.9/5 Rating (3,800+ Verified Pickups)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact" role="contentinfo">
+    <div class="footer-top">
+      <div class="container footer-top-inner">
+
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="WashAura Home">
+            <div class="logo-mark" aria-hidden="true">
+              <img src="assets/logo.png" alt="WashAura Logo" class="logo-img" />
+            </div>
+            <div class="logo-text">
+              <span class="logo-name">WashAura</span>
+              <span class="logo-tagline">Pure Garment Care. Delivered to Your Door.</span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            Professional garment care with convenient doorstep pickup, reliable cleaning, and delivery. Handled with
+            botanical chemistry and eco-safe dry cleaning.
+          </p>
+
+          <div class="footer-social" aria-label="Social media links">
+            <a href="https://instagram.com" class="social-link" id="social-instagram" aria-label="Instagram"
+              target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" class="social-link" id="social-facebook" aria-label="Facebook"
+              target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://youtube.com" class="social-link" id="social-youtube" aria-label="YouTube" target="_blank"
+              rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-nav-col" aria-label="Explore navigation">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul role="list">
+            <li><a href="index.html" class="footer-link">Home 1</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="journals.html" class="footer-link">Journals</a></li>
+            <li><a href="dashboard.html" class="footer-link">Dashboard</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav-col" aria-label="Customer care navigation">
+          <h3 class="footer-col-title">Customer Care</h3>
+          <ul role="list">
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="pricing.html#faqs" class="footer-link">Pickup Areas</a></li>
+            <li><a href="pricing.html#faqs" class="footer-link">Garment Care Guarantee</a></li>
+            <li><a href="pricing.html#faqs" class="footer-link">FAQs</a></li>
+            <li><a href="contact.html" class="footer-link">Privacy Policy</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav-col" aria-label="Additional information navigation">
+          <h3 class="footer-col-title">Additional Information</h3>
+          <ul role="list">
+            <li><a href="coming-soon.html" class="footer-link">Coming Soon</a></li>
+            <li><a href="404.html" class="footer-link">404</a></li>
+            <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h3 class="footer-col-title">Contact Details</h3>
+          <ul class="contact-list" role="list">
+            <li class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
+              <span class="contact-text">Central Garment Valet Atelier</span>
+            </li>
+            <li class="contact-item">
+              <a href="tel:9999988888" class="contact-link">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </span>
+                <span class="contact-text">9999988888</span>
+              </a>
+            </li>
+            <li class="contact-item">
+              <a href="mailto:care@washaura.com" class="contact-link">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </span>
+                <span class="contact-text">care@washaura.com</span>
+              </a>
+            </li>
+            <li class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </span>
+              <span class="contact-text">Mon &ndash; Sat: 7:00 AM &ndash; 8:00 PM PST</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copy">&copy; 2026 WashAura. All Rights Reserved.</p>
+        <nav class="footer-legal" aria-label="Legal navigation">
+          <a href="#privacy" class="footer-legal-link">Privacy</a>
+          <span class="legal-dot">&bull;</span>
+          <a href="#terms" class="footer-legal-link">Terms</a>
+          <span class="legal-dot">&bull;</span>
+          <a href="#cookies" class="footer-legal-link">Cookies</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="about.js" defer></script>
+</body>
+
+</html>

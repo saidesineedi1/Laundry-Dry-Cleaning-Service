@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WashAura Textile Care Journal — Deep dive into garment preservation, dry cleaning science, fiber biology, and laundry protocols." />
+  <meta name="keywords" content="garment care journal, dry cleaning science, cashmere preservation, steam pressing, textile longevity, eco laundry" />
+  <title id="jnd-page-title">The Art of Cashmere &amp; Wool Preservation — WashAura Journal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="journals detail.css" />
+</head>
+
+<body>
+
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="WashAura Home" id="logo-link">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/logo.png" alt="WashAura Logo" class="logo-img" />
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">WashAura</span>
+          <span class="logo-tagline">Pure Garment Care. Delivered to Your Door.</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list" role="list">
+          <li class="nav-item has-dropdown" id="nav-home-item">
+            <a href="index.html" class="nav-link nav-dropdown-trigger" id="nav-home" aria-expanded="false" aria-haspopup="true">
+              <span>Home</span>
+              <i data-lucide="chevron-down" class="dropdown-chevron" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Home versions">
+              <a href="index.html" class="dropdown-item" role="menuitem">
+                <div class="dropdown-item-icon"><i data-lucide="sparkles" aria-hidden="true"></i></div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-header"><span class="dropdown-item-title">Home 1</span></div>
+                  <span class="dropdown-item-desc">WashAura &bull; Laundry &amp; Dry Cleaning</span>
+                </div>
+              </a>
+              <a href="home2.html" class="dropdown-item" role="menuitem">
+                <div class="dropdown-item-icon icon-ayurveda"><i data-lucide="leaf" aria-hidden="true"></i></div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-header">
+                    <span class="dropdown-item-title">Home 2</span>
+                    <span class="dropdown-badge badge-alt">New</span>
+                  </div>
+                  <span class="dropdown-item-desc">PureCare &bull; Eco-Botanical Garment Care</span>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li><a href="about.html" class="nav-link" id="nav-about">About</a></li>
+          <li><a href="services.html" class="nav-link" id="nav-services">Services</a></li>
+          <li><a href="journals.html" class="nav-link active" id="nav-journal">Journal</a></li>
+          <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link" id="nav-dashboard">Dashboard</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions" role="toolbar" aria-label="Site actions">
+        <button class="toggle-btn rtl-toggle" id="rtl-toggle" aria-label="Toggle text direction" aria-pressed="false"
+          title="Switch text direction (RTL / LTR)">
+          <span class="toggle-label">RTL</span></button>
+
+        <button class="toggle-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"
+          title="Toggle light and dark mode">
+          <span class="theme-icon sun-icon"><i data-lucide="sun" aria-hidden="true"></i></span>
+          <span class="theme-icon moon-icon"><i data-lucide="moon" aria-hidden="true"></i></span>
+        </button>
+
+        <a href="login.html" class="btn btn-primary nav-login-btn" id="nav-login-btn">Login</a>
+
+        <button class="hamburger" id="hamburger-btn" aria-label="Open mobile menu" aria-expanded="false"
+          aria-controls="main-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
+      <div class="search-inner">
+        <div class="search-input-box">
+          <i data-lucide="search" class="search-input-icon" aria-hidden="true"></i>
+          <input type="search" class="search-input" id="search-input" placeholder="Search wash &amp; fold, dry cleaning, delicate care, ironing..." aria-label="Search garment care services" autocomplete="off" />
+          <button class="search-close" id="search-close" aria-label="Close search"><i data-lucide="x" aria-hidden="true"></i></button>
+        </div>
+        <div class="search-suggestions" id="search-suggestions">
+          <span class="sugg-label">Popular Searches:</span>
+          <button class="sugg-pill" data-query="Wash &amp; Fold">Wash &amp; Fold</button>
+          <button class="sugg-pill" data-query="Dry Cleaning">Dry Cleaning</button>
+          <button class="sugg-pill" data-query="Cashmere">Cashmere Care</button>
+          <button class="sugg-pill" data-query="Steam Press">Steam Ironing</button>
+        </div>
+        <div class="search-results-list" id="search-results-list"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-header">
+      <span class="logo-name">WashAura</span>
+      <button class="icon-btn mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item has-dropdown" id="mobile-nav-home-item">
+        <button class="mobile-nav-link mobile-dropdown-btn" id="mobile-home-toggle" aria-expanded="false">
+          <span>Home</span>
+          <i data-lucide="chevron-down" class="mobile-dropdown-chevron" aria-hidden="true"></i>
+        </button>
+        <ul class="mobile-submenu" id="mobile-home-submenu">
+          <li><a href="index.html" class="mobile-sublink"><i data-lucide="sparkles" aria-hidden="true"></i><span>Home 1 (WashAura)</span></a></li>
+          <li><a href="home2.html" class="mobile-sublink"><i data-lucide="leaf" aria-hidden="true"></i><span>Home 2 (PureCare)</span></a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="journals.html" class="mobile-nav-link active">Journal</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+      <li class="mobile-nav-login-item">
+        <a href="login.html" class="btn btn-primary mobile-menu-login-btn" id="mobile-drawer-login-btn">
+          <span>Login</span>
+        </a>
+      </li>
+    </ul>
+    
+    <div class="mobile-drawer-actions">
+      <div class="mobile-actions-grid">
+        <button class="mobile-action-card cart-action-card" onclick="if(typeof openCartDrawer==='function')openCartDrawer();" aria-label="Open Laundry Hamper">
+          <div class="mobile-card-icon-wrap">
+            <i data-lucide="shopping-bag" aria-hidden="true"></i>
+            <span class="mobile-cart-badge cart-count-badge">0</span>
+          </div>
+          <div class="mobile-card-text">
+            <span class="mobile-card-title">Laundry Hamper</span>
+            <span class="mobile-card-sub">View Hamper</span>
+          </div>
+        </button>
+        <a href="dashboard.html" class="mobile-action-card account-action-card" aria-label="Go to Member Dashboard">
+          <div class="mobile-card-icon-wrap user-icon-wrap">
+            <i data-lucide="user" aria-hidden="true"></i>
+          </div>
+          <div class="mobile-card-text">
+            <span class="mobile-card-title">Member Portal</span>
+            <span class="mobile-card-sub">Account &amp; Pickups</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <p class="mobile-nav-tagline">"Pure Garment Care. Delivered to Your Door."</p>
+    </div>
+  </div>
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+
+  <main id="main-content">
+
+    <section class="jnd-hero" id="article-hero" aria-labelledby="jnd-hero-heading">
+      <div class="jnd-hero-bg" id="jnd-hero-bg" aria-hidden="true">
+        <div class="jnd-hero-gradient"></div>
+        <div class="jnd-hero-pattern"></div>
+      </div>
+      <div class="container jnd-hero-inner">
+        <div class="jnd-hero-content">
+          <div class="jnd-hero-badges">
+            <span class="jnd-category-badge" id="jnd-category-badge">Garment Care</span>
+            <span class="jnd-featured-badge" id="jnd-featured-badge">
+              <i data-lucide="star" aria-hidden="true"></i> Featured
+            </span>
+          </div>
+          <h1 class="jnd-hero-heading" id="jnd-hero-heading">The Art of Cashmere &amp; Wool Preservation</h1>
+          <p class="jnd-hero-excerpt" id="jnd-hero-excerpt">
+            How cold-water enzyme baths, non-alkaline saponins, and precision flat-drying protect delicate animal fibers from shrinkage, fiber felting, and structural fatigue.
+          </p>
+          <div class="jnd-hero-meta">
+            <div class="jnd-meta-author">
+              <img src="assets/founder1.jpg" alt="Amara Silva" class="jnd-author-avatar-img-hero" id="jnd-author-avatar" />
+              <div class="jnd-author-info">
+                <span class="jnd-author-name" id="jnd-author-name">Amara Silva</span>
+                <span class="jnd-author-role" id="jnd-author-role">Master Textile Conservator</span>
+              </div>
+            </div>
+            <div class="jnd-meta-details">
+              <span class="jnd-meta-item"><i data-lucide="calendar" aria-hidden="true"></i><span id="jnd-date">Aug 15, 2026</span></span>
+              <span class="jnd-meta-divider" aria-hidden="true">|</span>
+              <span class="jnd-meta-item"><i data-lucide="clock" aria-hidden="true"></i><span id="jnd-read-time">8 min read</span></span>
+              <span class="jnd-meta-divider" aria-hidden="true">|</span>
+              <span class="jnd-meta-item"><i data-lucide="eye" aria-hidden="true"></i><span>2.4k views</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="jnd-hero-actions">
+          <button class="jnd-action-btn" id="jnd-share-btn" onclick="shareArticle()" aria-label="Share article" title="Share">
+            <i data-lucide="share-2" aria-hidden="true"></i><span>Share</span>
+          </button>
+          <button class="jnd-action-btn" id="jnd-bookmark-btn" onclick="toggleBookmark(this)" aria-label="Bookmark article" title="Bookmark">
+            <i data-lucide="bookmark" aria-hidden="true"></i><span>Save</span>
+          </button>
+          <a href="journals.html" class="jnd-action-btn jnd-back-btn" id="jnd-back-btn">
+            <i data-lucide="arrow-left" aria-hidden="true"></i><span>Back</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="jnd-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="jnd-progress-fill" id="jnd-progress-fill"></div>
+      </div>
+    </section>
+
+    <section class="jnd-body-section" id="article-body" aria-labelledby="jnd-hero-heading">
+      <div class="container jnd-body-inner">
+
+        <aside class="jnd-toc" id="jnd-toc" aria-label="Table of Contents">
+          <div class="jnd-toc-inner">
+            <h3 class="jnd-toc-title"><i data-lucide="list" aria-hidden="true"></i> Contents</h3>
+            <nav aria-label="Article table of contents">
+              <ol class="jnd-toc-list" id="jnd-toc-list">
+                <li><a href="#section-structure" class="jnd-toc-link jnd-toc-active" onclick="scrollToSection(event,'section-structure')">Microscopic Wool Morphology</a></li>
+                <li><a href="#section-felting" class="jnd-toc-link" onclick="scrollToSection(event,'section-felting')">Why Standard Washers Cause Felting</a></li>
+                <li><a href="#section-enzyme" class="jnd-toc-link" onclick="scrollToSection(event,'section-enzyme')">Enzymatic Neutral Saponin Baths</a></li>
+                <li><a href="#section-drying" class="jnd-toc-link" onclick="scrollToSection(event,'section-drying')">Flat-Block Air Drying Protocols</a></li>
+                <li><a href="#section-storage" class="jnd-toc-link" onclick="scrollToSection(event,'section-storage')">Cedar &amp; Linen Wardrobe Storage</a></li>
+              </ol>
+            </nav>
+            
+            <div class="jnd-toc-stats">
+              <div class="jnd-toc-stat"><i data-lucide="clock" aria-hidden="true"></i><span id="jnd-toc-read-time">8 min read</span></div>
+              <div class="jnd-toc-stat"><i data-lucide="bar-chart-2" aria-hidden="true"></i><span>2,400 words</span></div>
+            </div>
+
+            <div class="jnd-toc-product-cta-card">
+              <span class="jnd-toc-cta-tag"><i data-lucide="sparkles" aria-hidden="true"></i> FEATURED SERVICE</span>
+              <div class="jnd-toc-cta-img-wrap">
+                <img src="assets/about-folded-linens.jpg" alt="Wool &amp; Cashmere Conditioning" class="jnd-toc-cta-img" />
+                <span class="jnd-toc-cta-price">$24</span>
+              </div>
+              <div class="jnd-toc-cta-info">
+                <h4 class="jnd-toc-cta-title">Wool &amp; Cashmere Conditioning</h4>
+                <p class="jnd-toc-cta-rating"><i data-lucide="star" aria-hidden="true"></i> <span>5.0 (184 Reviews)</span></p>
+                <a href="services.html" class="jnd-toc-cta-btn">
+                  <span>Explore Service</span>
+                  <i data-lucide="arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </aside>
+
+        <article class="jnd-article-content" id="jnd-article-content" aria-label="Article content">
+
+          <figure class="jnd-content-hero-img-box">
+            <img src="assets/journal-cashmere.jpg" alt="Fine cashmere and wool garments" class="jnd-content-real-img" id="jnd-article-hero-img" />
+            <figcaption class="jnd-img-caption">Inspecting combed virgin merino wool and Mongolian cashmere fibers under polarized magnification at the WashAura Atelier.</figcaption>
+          </figure>
+
+          <p class="jnd-lead-para">
+            Cashmere and virgin wool represent some of nature's most sophisticated thermodynamic engineering. Each strand of Capra hircus down possesses an exterior sheath of microscopic imbricated scales that expand or contract in response to humidity and temperature. When cleaned improperly, these delicate cuticle scales interlock irreversibly — causing shrinking, stiffening, and irreversible textile damage.
+          </p>
+
+          <div class="jnd-content-section" id="section-structure">
+            <h2 class="jnd-content-h2">Microscopic Wool Morphology</h2>
+            <p class="jnd-content-p">
+              Unlike synthetic fibers like polyester or acrylic which feature slick, uniform cylindrical surfaces, raw animal hair fibers are wrapped in overlapping keratin scales. Premium cashmere boasts an exceptionally low micron count — typically between 14 and 16 microns — giving it its weightless softness.
+            </p>
+
+            <blockquote class="jnd-blockquote">
+              <i data-lucide="quote" aria-hidden="true"></i>
+              <p>"Natural animal fibers are living structures that respond dynamically to moisture, warmth, and mechanical torque. Preserve the cuticle scale alignment, and your knitwear will outlive generations."</p>
+              <cite>— Amara Silva, Master Textile Conservator at WashAura</cite>
+            </blockquote>
+
+            <p class="jnd-content-p">
+              At WashAura, our delicate wool care uses zero harsh synthetic alkaline cleaners. Traditional home detergents have a pH of 9 to 11, which strips away the fiber's natural lubricating lanolin waxes, leaving hairs brittle and dry. Our atelier uses specialized pH 7.0 neutral botanical washes that hydrate the keratin core while loosening ambient dirt.
+            </p>
+          </div>
+
+          <div class="jnd-stats-strip" aria-label="Key garment care statistics">
+            <div class="jnd-strip-stat">
+              <span class="jnd-strip-num">15.5µ</span>
+              <span class="jnd-strip-label">Fiber Micron</span>
+            </div>
+            <div class="jnd-strip-divider" aria-hidden="true"></div>
+            <div class="jnd-strip-stat">
+              <span class="jnd-strip-num">0%</span>
+              <span class="jnd-strip-label">Agitation Friction</span>
+            </div>
+            <div class="jnd-strip-divider" aria-hidden="true"></div>
+            <div class="jnd-strip-stat">
+              <span class="jnd-strip-num">100%</span>
+              <span class="jnd-strip-label">pH Neutral</span>
+            </div>
+            <div class="jnd-strip-divider" aria-hidden="true"></div>
+            <div class="jnd-strip-stat">
+              <span class="jnd-strip-num">18°C</span>
+              <span class="jnd-strip-label">Hydro-Temp</span>
+            </div>
+          </div>
+
+          <div class="jnd-content-section" id="section-felting">
+            <h2 class="jnd-content-h2">Why Standard Washers Cause Felting</h2>
+            <p class="jnd-content-p">
+              Felting occurs through the combination of three environmental stressors: elevated water temperature, mechanical agitation, and high pH chemistry. When submerged in hot water, the keratin scales open outward like pinecone scales. The rotational tumbling of a household washer rubs the strands against one another, locking the barbed edges into dense, compacted felt.
+            </p>
+
+            <div class="jnd-info-cards">
+              <div class="jnd-info-card">
+                <div class="jnd-info-card-icon"><i data-lucide="thermometer" aria-hidden="true"></i></div>
+                <h4>Thermal Shock</h4>
+                <p>Hot wash cycles force cuticle scales open, leaving the fiber core vulnerable to permanent collapse.</p>
+              </div>
+              <div class="jnd-info-card">
+                <div class="jnd-info-card-icon"><i data-lucide="refresh-cw" aria-hidden="true"></i></div>
+                <h4>Drum Agitation</h4>
+                <p>Mechanical torque braids wet filaments together, causing catastrophic and irreversible shrinking.</p>
+              </div>
+              <div class="jnd-info-card">
+                <div class="jnd-info-card-icon"><i data-lucide="droplets" aria-hidden="true"></i></div>
+                <h4>Alkaline Detergents</h4>
+                <p>High pH solutions dissolve protective natural lanolin, stripping yarn of elastic tensile strength.</p>
+              </div>
+            </div>
+
+            <p class="jnd-content-p">
+              Our precision wool treatment avoids mechanical agitation entirely. Garments rest in temperature-regulated 18°C subterranean baths where micro-effervescent bubbles gently dislodge particulates without disturbing fiber geometry.
+            </p>
+          </div>
+
+          <div class="jnd-content-section" id="section-enzyme">
+            <h2 class="jnd-content-h2">Enzymatic Neutral Saponin Baths</h2>
+            <p class="jnd-content-p">
+              Commercial dry-cleaning facilities frequently run knits through heavy solvent cycles that dry out animal hair. At WashAura, our conservation team uses custom saponin baths derived from organic soapwort root and cold-pressed botanical oils.
+            </p>
+            <p class="jnd-content-p">
+              Specific targeted proteases and lipases dissolve sweat proteins and sebum oils at biological room temperatures. The bath is maintained with reverse-osmosis purified water stripped of heavy minerals like calcium and magnesium, which cause stiffness in fine knits.
+            </p>
+
+            <div class="jnd-callout jnd-callout-tip">
+              <div class="jnd-callout-icon"><i data-lucide="lightbulb" aria-hidden="true"></i></div>
+              <div class="jnd-callout-body">
+                <h4>The Myth of Fabric Softeners</h4>
+                <p>Never apply conventional fabric softeners to cashmere. Cationic surfactants coat natural wool in an invisible petroleum silicone film that inhibits breathability, causes moisture entrapment, and accelerates fiber pilling.</p>
+              </div>
+            </div>
+
+            <p class="jnd-content-p">
+              Following the saponin bath, garments receive an infusion of reconstituted pharmaceutical-grade organic lanolin. This restores the protective natural barrier that was worn away by atmospheric friction and daily wear.
+            </p>
+          </div>
+
+          <div class="jnd-content-section" id="section-drying">
+            <h2 class="jnd-content-h2">Flat-Block Air Drying Protocols</h2>
+            <p class="jnd-content-p">
+              Drying fine knits requires as much discipline as the washing itself. Placing a wet wool sweater on a hanger stretches shoulder seams permanently under water weight. Machine tumble drying will shrink a garment by three sizes in minutes.
+            </p>
+
+            <div class="jnd-benefit-list">
+              <div class="jnd-benefit-item">
+                <div class="jnd-benefit-icon"><i data-lucide="layers" aria-hidden="true"></i></div>
+                <div class="jnd-benefit-body">
+                  <h4>Absorbent Towel Roll</h4>
+                  <p>Excess moisture is extracted by rolling the garment inside heavy Egyptian cotton towels, pressing flat without twisting or wringing.</p>
+                </div>
+              </div>
+              <div class="jnd-benefit-item">
+                <div class="jnd-benefit-icon"><i data-lucide="maximize" aria-hidden="true"></i></div>
+                <div class="jnd-benefit-body">
+                  <h4>Precision Blocking</h4>
+                  <p>Our specialists measure chest, sleeve, and torso dimensions against initial intake specifications, gently pinning seams on breathable mesh racks.</p>
+                </div>
+              </div>
+              <div class="jnd-benefit-item">
+                <div class="jnd-benefit-icon"><i data-lucide="wind" aria-hidden="true"></i></div>
+                <div class="jnd-benefit-body">
+                  <h4>Indirect Climate Control</h4>
+                  <p>Garments dry in 45% ambient humidity and 20°C filtered laminar air circulation away from radiant heaters or direct ultraviolet sunlight.</p>
+                </div>
+              </div>
+              <div class="jnd-benefit-item">
+                <div class="jnd-benefit-icon"><i data-lucide="sparkles" aria-hidden="true"></i></div>
+                <div class="jnd-benefit-body">
+                  <h4>Sonic De-Pilling Finish</h4>
+                  <p>Once dried, loose surface fuzz is lifted using German copper de-pilling blades that glide over ribs without cutting foundation yarns.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="jnd-content-section" id="section-storage">
+            <h2 class="jnd-content-h2">Cedar &amp; Linen Wardrobe Storage</h2>
+            <p class="jnd-content-p">
+              Seasonal care is the final cornerstone of knitwear longevity. After your WashAura valet returns your cleaned cashmere, follow these essential preservation habits at home:
+            </p>
+
+            <div class="jnd-ritual-steps">
+              <div class="jnd-ritual-step">
+                <div class="jnd-step-num">01</div>
+                <div class="jnd-step-body">
+                  <h4>Post-Season Cleanse</h4>
+                  <p>Always clean garments before packing them away. Invisible traces of skin lipids and food particles are the primary attractant for clothes moths (Tineola bisselliella).</p>
+                </div>
+              </div>
+              <div class="jnd-ritual-step">
+                <div class="jnd-step-num">02</div>
+                <div class="jnd-step-body">
+                  <h4>Breathable Linen Envelopes</h4>
+                  <p>Store folded knitwear in unbleached cotton or linen storage pouches. Avoid plastic totes or vacuum-sealed bags, which trap condensation and trigger yellowing.</p>
+                </div>
+              </div>
+              <div class="jnd-ritual-step">
+                <div class="jnd-step-num">03</div>
+                <div class="jnd-step-body">
+                  <h4>Aromatic Red Cedar</h4>
+                  <p>Place natural cedar blocks or dried lavender sachet pillows near folded garments. Lightly sand cedar every autumn to reactivate its aromatic repellent terpenes.</p>
+                </div>
+              </div>
+              <div class="jnd-ritual-step">
+                <div class="jnd-step-num">04</div>
+                <div class="jnd-step-body">
+                  <h4>Seasonal Aeration</h4>
+                  <p>Before putting on stored wool in autumn, hang garments in a well-ventilated room for two hours to allow the crimped fibers to drink in ambient humidity.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="jnd-callout jnd-callout-note">
+              <div class="jnd-callout-icon"><i data-lucide="info" aria-hidden="true"></i></div>
+              <div class="jnd-callout-body">
+                <h4>A Note on Moth Protection</h4>
+                <p>Never store garments with synthetic mothballs containing naphthalene or paradichlorobenzene. These chemicals leave an oily residue and emit toxic vapor that chemically weakens animal protein fibers.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="jnd-article-footer">
+            <div class="jnd-tags">
+              <span class="jnd-tag"><i data-lucide="tag" aria-hidden="true"></i> Wool Care</span>
+              <span class="jnd-tag">Cashmere</span>
+              <span class="jnd-tag">Fabric Science</span>
+              <span class="jnd-tag">Garment Longevity</span>
+              <span class="jnd-tag">Eco Atelier</span>
+            </div>
+            <div class="jnd-share-row">
+              <span>Share this guide:</span>
+              <button class="jnd-share-btn" onclick="shareToSocial('twitter')" aria-label="Share on X/Twitter">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </button>
+              <button class="jnd-share-btn" onclick="shareToSocial('facebook')" aria-label="Share on Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </button>
+              <button class="jnd-share-btn" onclick="copyArticleLink()" aria-label="Copy link" id="jnd-copy-link-btn">
+                <i data-lucide="link" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="jnd-author-card" id="jnd-author-card">
+            <img src="assets/founder1.jpg" alt="Amara Silva" class="jnd-author-card-avatar-img" id="jnd-author-card-avatar" />
+            <div class="jnd-author-card-info">
+              <span class="jnd-author-card-label">Written by</span>
+              <h3 class="jnd-author-card-name" id="jnd-author-card-name">Amara Silva</h3>
+              <p class="jnd-author-card-bio">Master Textile Conservator at WashAura. With over 15 years in luxury fabric restoration and museum-grade textile curation, Amara develops proprietary eco-cleaning protocols for delicate animal fibers.</p>
+              <div class="jnd-author-card-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="jnd-author-social" aria-label="Author on Instagram"><i data-lucide="instagram" aria-hidden="true"></i></a>
+                <a href="journals.html" class="jnd-author-social" aria-label="Author articles"><i data-lucide="book-open" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </article>
+      </div>
+    </section>
+
+    <section class="jnd-related" id="related-articles" aria-labelledby="jnd-related-heading">
+      <div class="container">
+        <div class="jnd-related-header">
+          <p class="section-eyebrow">
+            <span class="eyebrow-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+            Continue Reading
+          </p>
+          <h2 class="jnd-related-title" id="jnd-related-heading">More from the Fabric Care Journal</h2>
+        </div>
+        <div class="jnd-related-grid" id="jnd-related-grid">
+
+          <article class="jnd-related-card" onclick="openJournalDetail('closed-loop-dry-cleaning-science')" tabindex="0" onkeydown="if(event.key==='Enter')openJournalDetail('closed-loop-dry-cleaning-science')" id="related-card-1" aria-label="Read: Dry Cleaning Science">
+            <div class="jnd-related-img-wrap">
+              <img src="assets/journal-eco-science.jpg" alt="Eco dry cleaning closed-loop solvent science" class="jnd-card-real-img" />
+            </div>
+            <div class="jnd-related-body">
+              <span class="jnd-related-category">Science</span>
+              <h3 class="jnd-related-title-card">Why Closed-Loop Dry Cleaning Protects Couture Silks</h3>
+              <div class="jnd-related-meta">
+                <span><i data-lucide="clock" aria-hidden="true"></i> 6 min</span>
+                <span>Dr. Nadia Chen</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="jnd-related-card" onclick="openJournalDetail('cotton-shrinkage-and-ironing')" tabindex="0" onkeydown="if(event.key==='Enter')openJournalDetail('cotton-shrinkage-and-ironing')" id="related-card-2" aria-label="Read: Cotton Ironing">
+            <div class="jnd-related-img-wrap">
+              <img src="assets/process-pressing.jpg" alt="Professional steam ironing" class="jnd-card-real-img" />
+            </div>
+            <div class="jnd-related-body">
+              <span class="jnd-related-category">Ironing</span>
+              <h3 class="jnd-related-title-card">Mastering Cotton Shrinkage &amp; Professional Steam Ironing</h3>
+              <div class="jnd-related-meta">
+                <span><i data-lucide="clock" aria-hidden="true"></i> 4 min</span>
+                <span>Aria Thorne</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="jnd-related-card" onclick="openJournalDetail('curtain-and-interior-textile-care')" tabindex="0" onkeydown="if(event.key==='Enter')openJournalDetail('curtain-and-interior-textile-care')" id="related-card-3" aria-label="Read: Curtain Care">
+            <div class="jnd-related-img-wrap">
+              <img src="assets/journal-linen-care.jpg" alt="Pristine interior drapery and linen care" class="jnd-card-real-img" />
+            </div>
+            <div class="jnd-related-body">
+              <span class="jnd-related-category">Household</span>
+              <h3 class="jnd-related-title-card">Restoring Drapery: Cleaning Linen &amp; Velvet Curtains</h3>
+              <div class="jnd-related-meta">
+                <span><i data-lucide="clock" aria-hidden="true"></i> 7 min</span>
+                <span>Amara Silva</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="jnd-mini-nl" id="article-newsletter" aria-labelledby="jnd-mini-nl-heading">
+      <div class="container">
+        
+        <div class="jnd-mini-cta-card">
+          <div class="jnd-mini-cta-bg-orbs" aria-hidden="true">
+            <div class="jnd-mini-orb jnd-mini-orb-1"></div>
+            <div class="jnd-mini-orb jnd-mini-orb-2"></div>
+          </div>
+
+          <div class="jnd-mini-cta-grid">
+            <div class="jnd-mini-nl-content">
+              <p class="section-eyebrow eyebrow-light">
+                <span class="eyebrow-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+                Never Miss a Textile Guide
+              </p>
+
+              <h2 class="jnd-mini-nl-heading" id="jnd-mini-nl-heading">Enjoyed this garment guide?</h2>
+              <p class="jnd-mini-nl-desc">Get our weekly garment care dispatches — fabric preservation guides, dry-cleaning insights, and seasonal wardrobe tips delivered every Tuesday.</p>
+              
+              <form class="jnd-mini-nl-form" id="jnd-mini-nl-form" onsubmit="handleMiniNewsletter(event)" novalidate>
+                <div class="jnd-mini-form-group">
+                  <div class="jnd-mini-input-wrap">
+                    <i data-lucide="mail" aria-hidden="true"></i>
+                    <input type="email" class="jnd-mini-nl-input" id="jnd-mini-email" placeholder="Enter your email" aria-label="Email address" required />
+                  </div>
+                  <button type="submit" class="jnd-mini-nl-btn" id="jnd-mini-submit-btn">
+                    <span>Subscribe Free</span> <i data-lucide="arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <p class="jnd-mini-nl-note"><i data-lucide="shield-check" aria-hidden="true"></i> Free forever. Unsubscribe anytime.</p>
+                <div class="jnd-mini-nl-success" id="jnd-mini-nl-success" hidden aria-live="polite">
+                  <i data-lucide="check-circle" aria-hidden="true"></i> You're subscribed! Welcome to the WashAura Dispatch.
+                </div>
+              </form>
+            </div>
+
+            <div class="jnd-mini-nl-visual" aria-hidden="true">
+              <div class="jnd-mini-visual-frame">
+                <img src="assets/about-sustainability.jpg" alt="WashAura sustainable garment care atelier" class="jnd-mini-visual-img" />
+                <div class="jnd-mini-visual-overlay"></div>
+                <div class="jnd-mini-visual-badge">
+                  <i data-lucide="heart" aria-hidden="true"></i>
+                  <span>12k Members</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-top-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo" aria-label="WashAura Home">
+          <div class="logo-mark" aria-hidden="true">
+            <img src="assets/logo.png" alt="WashAura Logo" class="logo-img" />
+          </div>
+          <div class="logo-text">
+            <span class="logo-name">WashAura</span>
+            <span class="logo-tagline">Pure Garment Care. Delivered to Your Door.</span>
+          </div>
+        </a>
+        <p class="footer-desc">WashAura provides professional garment care, organic dry cleaning, eco-friendly wash &amp; fold, and artisan steam ironing with contactless doorstep pickup and delivery.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="https://instagram.com" class="social-link" id="social-instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://facebook.com" class="social-link" id="social-facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="https://youtube.com" class="social-link" id="social-youtube" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="footer-nav-col" aria-label="Explore navigation">
+        <h3 class="footer-col-title">Explore</h3>
+        <ul role="list">
+          <li><a href="index.html" class="footer-link">Home 1</a></li>
+          <li><a href="about.html" class="footer-link">About</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="journals.html" class="footer-link">Journals</a></li>
+          <li><a href="dashboard.html" class="footer-link">Dashboard</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav-col" aria-label="Customer care navigation">
+        <h3 class="footer-col-title">Customer Care</h3>
+        <ul role="list">
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="pricing.html#faqs" class="footer-link">Valet Pickup</a></li>
+          <li><a href="pricing.html#faqs" class="footer-link">Turnaround</a></li>
+          <li><a href="pricing.html#faqs" class="footer-link">FAQs</a></li>
+          <li><a href="contact.html" class="footer-link">Privacy Policy</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav-col" aria-label="Additional information navigation">
+        <h3 class="footer-col-title">Additional Information</h3>
+        <ul role="list">
+          <li><a href="coming-soon.html" class="footer-link">Coming Soon</a></li>
+          <li><a href="404.html" class="footer-link">404</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h3 class="footer-col-title">Contact Details</h3>
+        <ul class="contact-list" role="list">
+          <li class="contact-item">
+            <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+            <span class="contact-text">Central Valet Atelier &amp; Processing Facility</span>
+          </li>
+          <li class="contact-item">
+            <a href="tel:9999988888" class="contact-link">
+              <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+              <span class="contact-text">9999988888</span>
+            </a>
+          </li>
+          <li class="contact-item">
+            <a href="mailto:care@washaura.com" class="contact-link">
+              <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+              <span class="contact-text">care@washaura.com</span>
+            </a>
+          </li>
+          <li class="contact-item">
+            <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+            <span class="contact-text">Mon &ndash; Fri: 8:00 AM &ndash; 8:00 PM PST</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copy">&copy; 2026 WashAura. All Rights Reserved.</p>
+        <nav class="footer-legal" aria-label="Legal navigation">
+          <a href="#privacy" class="footer-legal-link">Privacy</a>
+          <span class="legal-dot">&bull;</span>
+          <a href="#terms" class="footer-legal-link">Terms</a>
+          <span class="legal-dot">&bull;</span>
+          <a href="#cookies" class="footer-legal-link">Cookies</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="home1.js" defer></script>
+  <script src="journals detail.js" defer></script>
+</body>
+</html>

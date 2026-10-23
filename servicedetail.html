@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" id="sd-meta-desc"
+    content="WashAura — Premium Laundry & Dry Cleaning service details. Discover fabric care, benefits, pricing and textile recommendations." />
+  <title id="sd-page-title">Service Detail — WashAura</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="servicedetail.css" />
+</head>
+
+<body>
+
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="WashAura Home" id="logo-link">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/logo.png" alt="WashAura Logo" class="logo-img" />
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">WashAura</span>
+          <span class="logo-tagline">Pure Garment Care. Delivered to Your Door.</span>
+        </div>
+      </a>
+      <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list" role="list">
+          <li class="nav-item has-dropdown" id="nav-home-item">
+            <a href="index.html" class="nav-link nav-dropdown-trigger" id="nav-home" aria-expanded="false"
+              aria-haspopup="true">
+              <span>Home</span><i data-lucide="chevron-down" class="dropdown-chevron" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Home versions">
+              <a href="index.html" class="dropdown-item" role="menuitem">
+                <div class="dropdown-item-icon"><i data-lucide="sparkles" aria-hidden="true"></i></div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-header"><span class="dropdown-item-title">Home 1</span></div>
+                  <span class="dropdown-item-desc">WashAura &bull; Laundry &amp; Dry Cleaning</span>
+                </div>
+              </a>
+              <a href="home2.html" class="dropdown-item" role="menuitem">
+                <div class="dropdown-item-icon icon-ayurveda"><i data-lucide="leaf" aria-hidden="true"></i></div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-header"><span class="dropdown-item-title">Home 2</span><span
+                      class="dropdown-badge badge-alt">New</span></div>
+                  <span class="dropdown-item-desc">PureCare &bull; Eco Wash Rituals</span>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li><a href="about.html" class="nav-link" id="nav-about">About</a></li>
+          <li><a href="services.html" class="nav-link active" id="nav-services">Services</a></li>
+          <li><a href="journals.html" class="nav-link" id="nav-journal">Journal</a></li>
+          <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link" id="nav-dashboard">Dashboard</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions" role="toolbar" aria-label="Site actions">
+        <button class="toggle-btn rtl-toggle" id="rtl-toggle" aria-label="Toggle text direction" aria-pressed="false"
+          title="Switch text direction (RTL / LTR)">
+          <span class="toggle-label">RTL</span></button>
+
+        <button class="toggle-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"
+          title="Toggle light and dark mode">
+          <span class="theme-icon sun-icon"><i data-lucide="sun" aria-hidden="true"></i></span>
+          <span class="theme-icon moon-icon"><i data-lucide="moon" aria-hidden="true"></i></span>
+        </button>
+
+        <a href="login.html" class="btn btn-primary nav-login-btn" id="nav-login-btn">Login</a>
+
+        <button class="hamburger" id="hamburger-btn" aria-label="Open mobile menu" aria-expanded="false"
+          aria-controls="main-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
+      <div class="search-inner">
+        <div class="search-input-box">
+          <i data-lucide="search" class="search-input-icon" aria-hidden="true"></i>
+          <input type="search" class="search-input" id="search-input"
+            placeholder="Search wash & fold, dry cleaning, steam pressing, drapery..." aria-label="Search laundry services"
+            autocomplete="off" />
+          <button class="search-close" id="search-close" aria-label="Close search"><i data-lucide="x"
+              aria-hidden="true"></i></button>
+        </div>
+        <div class="search-suggestions" id="search-suggestions">
+          <span class="sugg-label">Popular Searches:</span>
+          <button class="sugg-pill" data-query="Wash &amp; Fold">Wash &amp; Fold</button>
+          <button class="sugg-pill" data-query="Dry Cleaning">Dry Cleaning</button>
+          <button class="sugg-pill" data-query="Steam Ironing">Steam Ironing</button>
+          <button class="sugg-pill" data-query="Curtains">Curtains</button>
+        </div>
+        <div class="search-results-list" id="search-results-list"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-header">
+      <span class="logo-name">WashAura</span>
+      <button class="icon-btn mobile-nav-close" id="mobile-nav-close" aria-label="Close menu"><i data-lucide="x"
+          aria-hidden="true"></i></button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item has-dropdown" id="mobile-nav-home-item">
+        <button class="mobile-nav-link mobile-dropdown-btn" id="mobile-home-toggle" aria-expanded="false">
+          <span>Home</span><i data-lucide="chevron-down" class="mobile-dropdown-chevron" aria-hidden="true"></i>
+        </button>
+        <ul class="mobile-submenu" id="mobile-home-submenu">
+          <li><a href="index.html" class="mobile-sublink"><i data-lucide="sparkles" aria-hidden="true"></i><span>Home
+                1</span></a></li>
+          <li><a href="home2.html" class="mobile-sublink"><i data-lucide="leaf" aria-hidden="true"></i><span>Home
+                2</span></a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="services.html" class="mobile-nav-link active">Services</a></li>
+      <li><a href="journals.html" class="mobile-nav-link">Journal</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+      <li class="mobile-nav-login-item">
+        <a href="login.html" class="btn btn-primary mobile-menu-login-btn" id="mobile-drawer-login-btn">
+          <span>Login</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="mobile-drawer-actions">
+      <div class="mobile-actions-grid">
+        <button class="mobile-action-card cart-action-card"
+          onclick="if(typeof openCartDrawer==='function')openCartDrawer();" aria-label="Open Laundry Hamper">
+          <div class="mobile-card-icon-wrap">
+            <i data-lucide="shopping-bag" aria-hidden="true"></i>
+            <span class="mobile-cart-badge cart-count-badge">0</span>
+          </div>
+          <div class="mobile-card-text">
+            <span class="mobile-card-title">Laundry Hamper</span>
+            <span class="mobile-card-sub">View Items</span>
+          </div>
+        </button>
+        <a href="dashboard.html" class="mobile-action-card account-action-card" aria-label="Go to Member Dashboard">
+          <div class="mobile-card-icon-wrap user-icon-wrap">
+            <i data-lucide="user" aria-hidden="true"></i>
+          </div>
+          <div class="mobile-card-text">
+            <span class="mobile-card-title">Member Portal</span>
+            <span class="mobile-card-sub">Orders &amp; Pickups</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <p class="mobile-nav-tagline">"Pure Garment Care. Delivered to Your Door."</p>
+    </div>
+  </div>
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+
+  <main id="main-content">
+
+    <section class="sd-hero" id="sd-hero" aria-labelledby="sd-hero-title">
+      <div class="sd-hero-orbs" aria-hidden="true">
+        <div class="sd-orb sd-orb-1"></div>
+        <div class="sd-orb sd-orb-2"></div>
+      </div>
+
+      <div class="container sd-hero-inner">
+        <div class="sd-hero-grid">
+
+          <div class="sd-hero-info">
+            <div class="sd-hero-meta">
+              <div class="hero-eyebrow-wrapper">
+                <span class="eyebrow-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+                <p class="hero-eyebrow" id="sd-hero-badge">Everyday Care</p>
+              </div>
+              <div class="sd-hero-rating">
+                <span class="sd-rating-stars" id="sd-rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="sd-rating-val" id="sd-rating-val">4.9</span>
+                <span class="sd-rating-count" id="sd-rating-count">(142 reviews)</span>
+              </div>
+            </div>
+
+            <h1 class="sd-hero-title" id="sd-hero-title">Wash &amp; Fold Everyday Bag</h1>
+
+            <p class="sd-hero-tagline" id="sd-hero-tagline">
+              "Everyday garments washed in pure, hypoallergenic suds and folded with boutique precision."
+            </p>
+
+            <p class="sd-hero-desc" id="sd-hero-desc">
+              A complete weight-based wash and fold service for daily cottons, casuals, and linens. Cleaned in pH-balanced eco-detergents,
+              tumble-dried at safe temperatures, and crisply bundled for immediate wear.
+            </p>
+
+            <div class="sd-price-block">
+              <div class="sd-price-wrap">
+                <span class="sd-price-label">Starting From</span>
+                <span class="sd-price-val" id="sd-price-val">$18</span>
+              </div>
+              <div class="sd-hero-actions">
+                <button class="btn btn-primary sd-btn-primary" id="sd-book-btn">
+                  <i data-lucide="calendar" aria-hidden="true"></i>
+                  Schedule Pickup
+                </button>
+                <button class="btn btn-outline sd-btn-outline" id="sd-back-btn" onclick="history.back()">
+                  <i data-lucide="arrow-left" aria-hidden="true"></i>
+                  All Services
+                </button>
+              </div>
+            </div>
+
+            <div class="sd-hero-feature-row" aria-label="Key laundry features and benefits">
+              <div class="sd-hero-feature-item">
+                <div class="sd-feature-icon-box">
+                  <i data-lucide="droplet" aria-hidden="true"></i>
+                </div>
+                <span>Eco Enzymes</span>
+              </div>
+              <div class="sd-hero-feature-item">
+                <div class="sd-feature-icon-box">
+                  <i data-lucide="shield" aria-hidden="true"></i>
+                </div>
+                <span>Color-Safe</span>
+              </div>
+              <div class="sd-hero-feature-item">
+                <div class="sd-feature-icon-box">
+                  <i data-lucide="wind" aria-hidden="true"></i>
+                </div>
+                <span>Low-Heat Dry</span>
+              </div>
+              <div class="sd-hero-feature-item">
+                <div class="sd-feature-icon-box">
+                  <i data-lucide="sparkles" aria-hidden="true"></i>
+                </div>
+                <span>Precision Fold</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sd-hero-img-wrap">
+            <div class="sd-hero-img-frame">
+              <img id="sd-hero-img" src="assets/laundry-wash-fold.jpg" alt="Wash & Fold Everyday Bag" class="sd-hero-img" />
+            </div>
+
+            <div class="hero-badge" aria-label="Artisanal Garment Care">
+              <div class="badge-inner">
+                <svg viewBox="0 0 130 130" class="badge-ring" aria-hidden="true">
+                  <path id="sd-badge-circle-path" d="M 65,65 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0"
+                    fill="none" />
+                  <text font-size="9.5" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="3.2"
+                    fill="currentColor" font-weight="600" class="badge-rotating-text">
+                    <textPath href="#sd-badge-circle-path" startOffset="0%">
+                      WASH &bull; DRY CLEAN &bull; STEAM PRESS &bull;
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="badge-center">
+                  <i data-lucide="sparkle" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-card" aria-label="Eco-Friendly Garment Care">
+              <div class="hero-card-icon">
+                <i data-lucide="check" aria-hidden="true"></i>
+              </div>
+              <div class="hero-card-info">
+                <strong id="sd-card-info-title">100% Eco-Safe</strong>
+                <span id="sd-card-info-sub">Cleaned Daily</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="sd-benefits" id="sd-benefits" aria-labelledby="sd-benefits-heading">
+      <div class="container">
+        <div class="sd-section-header">
+          <div class="hero-eyebrow-wrapper">
+            <span class="eyebrow-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+            <p class="hero-eyebrow">WHAT WE DO FOR YOUR GARMENTS</p>
+          </div>
+          <h2 class="sd-section-title" id="sd-benefits-heading">Care &amp; <em>Finishing Benefits</em></h2>
+          <p class="sd-section-desc" id="sd-benefits-intro">
+            Discover the transformative standard of our laundry atelier — crafted to extend the life, color, and texture of your wardrobe.
+          </p>
+        </div>
+
+        <div class="sd-benefits-grid" id="sd-benefits-grid">
+
+        </div>
+      </div>
+    </section>
+
+    <section class="sd-story sd-story-science" id="sd-story" aria-label="The Science Behind It">
+      <div class="container">
+        <div class="sd-story-block sd-story-left" id="sd-story-block-1">
+          <div class="sd-story-img-wrap">
+            <div class="sd-story-img-frame">
+              <img id="sd-story-img-1" src="assets/about-sustainability.jpg" alt="Crafted with Advanced Eco-Solvent Care" class="sd-story-img"
+                loading="lazy" />
+            </div>
+            <div class="sd-story-img-badge" aria-hidden="true">
+              <i data-lucide="sparkles" aria-hidden="true"></i>
+              <span>Eco Enzyme Wash &bull; Fabric Safe</span>
+            </div>
+          </div>
+          <div class="sd-story-content">
+            <span class="sd-eyebrow">THE TEXTILE SCIENCE</span>
+            <h2 class="sd-story-title" id="sd-story-title-1">Crafted with Advanced<br /><em>Eco-Solvent Care</em></h2>
+            <p class="sd-story-para" id="sd-story-para-1a">
+              At WashAura, we believe garment care is an artisanal science. Our atelier pairs German precision washing
+              machinery with non-toxic, hypoallergenic solvents that cleanse deep into textile fibers without structural breakdown.
+            </p>
+            <p class="sd-story-para" id="sd-story-para-1b">
+              Each fabric category is cleaned under calibrated moisture, temperature, and agitation curves. Our low-temperature
+              protocols preserve natural tensile strength — ensuring garments return with original texture and vibrant color integrity.
+            </p>
+            <ul class="sd-story-perks" id="sd-story-perks-1">
+              <li><i data-lucide="leaf" aria-hidden="true"></i> pH-balanced botanical detergents</li>
+              <li><i data-lucide="droplet" aria-hidden="true"></i> Hydrocarbon non-toxic solvents</li>
+              <li><i data-lucide="shield-check" aria-hidden="true"></i> Zero abrasive chemical bleaches</li>
+              <li><i data-lucide="sparkles" aria-hidden="true"></i> Fabric longevity certified</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sd-story sd-story-ritual" id="sd-story-ritual" aria-label="The Ritual Experience">
+      <div class="container">
+        <div class="sd-story-block sd-story-right" id="sd-story-block-2">
+          <div class="sd-story-content">
+            <span class="sd-eyebrow">THE ATELIER PROTOCOL</span>
+            <h2 class="sd-story-title" id="sd-story-title-2">From Doorstep Pickup<br /><em>To Wardrobe Return</em></h2>
+            <p class="sd-story-para" id="sd-story-para-2a">
+              Every order is treated as a bespoke assignment. Our couriers collect your garments in weather-sealed hampers,
+              followed by 7-point atelier intake where stains, loose threads, and care tags are documented.
+            </p>
+            <p class="sd-story-para" id="sd-story-para-2b">
+              From Italian steam pressing to bespoke garment shaping, each piece receives custom finishing. You receive your garments
+              crisply folded or hanging on cedar supports — perfectly fresh, sanitized, and immediately ready to wear.
+            </p>
+            <ul class="sd-story-perks" id="sd-story-perks-2">
+              <li><i data-lucide="check-circle" aria-hidden="true"></i> Doorstep contactless courier pickup</li>
+              <li><i data-lucide="check-circle" aria-hidden="true"></i> Detailed 7-point garment inspection</li>
+              <li><i data-lucide="check-circle" aria-hidden="true"></i> Italian vacuum steam finishing</li>
+              <li><i data-lucide="check-circle" aria-hidden="true"></i> Breathable garment covers included</li>
+            </ul>
+          </div>
+          <div class="sd-story-img-wrap">
+            <div class="sd-story-img-frame">
+              <img id="sd-story-img-2" src="assets/about-garment-care.jpg" alt="Atelier garment finishing" class="sd-story-img"
+                loading="lazy" />
+            </div>
+            <div class="sd-story-img-badge sd-badge-right" aria-hidden="true">
+              <i data-lucide="sparkles" aria-hidden="true"></i>
+              <span>Award-Winning Care</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sd-pricing" id="sd-pricing" aria-labelledby="sd-pricing-heading">
+      <div class="container">
+        <div class="sd-section-header">
+          <div class="hero-eyebrow-wrapper">
+            <span class="eyebrow-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+            <p class="hero-eyebrow">TRANSPARENT SERVICE TIERS</p>
+          </div>
+          <h2 class="sd-section-title" id="sd-pricing-heading">Choose Your <em>Care Plan</em></h2>
+          <p class="sd-section-desc">Every plan includes door-to-door courier logistics, hypoallergenic detergents, and eco-friendly protective packaging.</p>
+        </div>
+
+        <div class="sd-pricing-grid" id="sd-pricing-grid">
+
+          <div class="sd-pricing-card" id="sd-plan-essential">
+            <div class="sd-pricing-card-header">
+              <span class="sd-plan-icon"><i data-lucide="leaf" aria-hidden="true"></i></span>
+              <h3 class="sd-plan-name">Essentials Tier</h3>
+              <p class="sd-plan-tagline">Perfect for everyday laundry</p>
+            </div>
+            <div class="sd-plan-price-wrap">
+              <span class="sd-plan-price" id="sd-plan-price-essential">$18</span>
+              <span class="sd-plan-period">/ service</span>
+            </div>
+            <ul class="sd-plan-features">
+              <li><i data-lucide="check" aria-hidden="true"></i> Up to 15 lbs laundry</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Color-safe sorting</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Hypoallergenic rinse</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Square boutique fold</li>
+              <li class="sd-plan-feature-muted"><i data-lucide="x" aria-hidden="true"></i> Stain pre-spotting</li>
+              <li class="sd-plan-feature-muted"><i data-lucide="x" aria-hidden="true"></i> Hand steam pressing</li>
+            </ul>
+            <button class="sd-plan-btn sd-plan-btn-outline" id="sd-book-essential">Book Essentials</button>
+          </div>
+
+          <div class="sd-pricing-card sd-pricing-featured" id="sd-plan-signature">
+            <div class="sd-featured-badge">Most Popular</div>
+            <div class="sd-pricing-card-header">
+              <span class="sd-plan-icon"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+              <h3 class="sd-plan-name">Signature Valet</h3>
+              <p class="sd-plan-tagline">Complete wash &amp; steam pressing</p>
+            </div>
+            <div class="sd-plan-price-wrap">
+              <span class="sd-plan-price" id="sd-plan-price-signature">$32</span>
+              <span class="sd-plan-period">/ service</span>
+            </div>
+            <ul class="sd-plan-features">
+              <li><i data-lucide="check" aria-hidden="true"></i> Up to 25 lbs laundry</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Targeted stain lift</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Italian hand steam press</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Protective wardrobe hangers</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Express 24h option</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Garment bag delivery</li>
+            </ul>
+            <button class="sd-plan-btn sd-plan-btn-primary" id="sd-book-signature">Book Signature</button>
+          </div>
+
+          <div class="sd-pricing-card" id="sd-plan-luxury">
+            <div class="sd-pricing-card-header">
+              <span class="sd-plan-icon"><i data-lucide="crown" aria-hidden="true"></i></span>
+              <h3 class="sd-plan-name">Prestige Couture</h3>
+              <p class="sd-plan-tagline">Formalwear &amp; delicate fabrics</p>
+            </div>
+            <div class="sd-plan-price-wrap">
+              <span class="sd-plan-price" id="sd-plan-price-luxury">$48</span>
+              <span class="sd-plan-period">/ service</span>
+            </div>
+            <ul class="sd-plan-features">
+              <li><i data-lucide="check" aria-hidden="true"></i> Detailed couture intake</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Hydrocarbon dry cleaning</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Acid-free tissue fold</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Contour jacket pressing</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Button &amp; trim reinforcement</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> White-glove courier delivery</li>
+            </ul>
+            <button class="sd-plan-btn sd-plan-btn-outline" id="sd-book-luxury">Book Prestige</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="sd-skintype" id="sd-skintype" aria-labelledby="sd-skintype-heading">
+      <div class="container">
+        <div class="sd-section-header">
+          <div class="hero-eyebrow-wrapper">
+            <span class="eyebrow-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+            <p class="hero-eyebrow">FABRIC COMPATIBILITY</p>
+          </div>
+          <h2 class="sd-section-title" id="sd-skintype-heading">Optimized For Your <em>Fabrics</em></h2>
+          <p class="sd-section-desc">This service is specially calibrated to protect and revitalize these fabric classifications.</p>
+        </div>
+
+        <div class="sd-skintype-grid" id="sd-skintype-grid">
+
+        </div>
+
+        <div class="sd-skintype-cta">
+          <div class="sd-skintype-cta-inner">
+            <div class="sd-skintype-cta-text">
+              <h3 class="sd-skintype-cta-title">Have specialty fabrics or designer couture?</h3>
+              <p class="sd-skintype-cta-desc">Speak with our garment care masters for tailored stain analysis, bespoke leather care, or delicate lace treatments.</p>
+            </div>
+            <button class="sd-btn-primary" id="sd-quiz-btn">
+              <i data-lucide="clipboard-list" aria-hidden="true"></i>
+              Consult Garment Master
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sd-protocol" id="sd-protocol" aria-labelledby="sd-protocol-heading">
+      <div class="container">
+        <div class="sd-section-header text-center">
+          <p class="section-eyebrow eyebrow-light">
+            <span class="eyebrow-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+            Our 4-Stage Atelier Standard
+          </p>
+          <h2 class="sd-section-title sd-title-light" id="sd-protocol-heading">The Science of <em>Pristine Garments</em>
+          </h2>
+          <p class="sd-section-desc sd-desc-light">Our 4-stage fabric care protocol ensures maximum cleanliness, hygiene, and garment longevity.</p>
+        </div>
+
+        <div class="sd-protocol-grid">
+
+          <div class="sd-protocol-card">
+            <div class="sd-protocol-number">01</div>
+            <div class="sd-protocol-icon"><i data-lucide="scan" aria-hidden="true"></i></div>
+            <h3 class="sd-protocol-title">Barcode &amp; Intake</h3>
+            <p class="sd-protocol-desc">Every piece is barcoded, examined under daylight lamps for stains, and categorized by fiber tolerance.</p>
+          </div>
+
+          <div class="sd-protocol-card">
+            <div class="sd-protocol-number">02</div>
+            <div class="sd-protocol-icon"><i data-lucide="droplets" aria-hidden="true"></i></div>
+            <h3 class="sd-protocol-title">Purified Aqueous Wash</h3>
+            <p class="sd-protocol-desc">Washed in reverse-osmosis soft water with plant enzymes — zero aggressive bleach, zero fiber thinning.</p>
+          </div>
+
+          <div class="sd-protocol-card">
+            <div class="sd-protocol-number">03</div>
+            <div class="sd-protocol-icon"><i data-lucide="sparkles" aria-hidden="true"></i></div>
+            <h3 class="sd-protocol-title">Fiber-Conditioning Rinse</h3>
+            <p class="sd-protocol-desc">Calibrated at fabric neutral pH to release moisture without static cling, restoring softness and breathability.</p>
+          </div>
+
+          <div class="sd-protocol-card">
+            <div class="sd-protocol-number">04</div>
+            <div class="sd-protocol-icon"><i data-lucide="shield-check" aria-hidden="true"></i></div>
+            <h3 class="sd-protocol-title">Contour Steam &amp; Pack</h3>
+            <p class="sd-protocol-desc">Finished on Italian vacuum steam tables and sealed in breathable garment bags for dust-free delivery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sd-related" id="sd-related" aria-labelledby="sd-related-heading">
+      <div class="container">
+        <div class="sd-section-header">
+          <div class="hero-eyebrow-wrapper">
+            <span class="eyebrow-sparkle"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+            <p class="hero-eyebrow">CONTINUE YOUR JOURNEY</p>
+          </div>
+          <h2 class="sd-section-title" id="sd-related-heading">You Might Also <em>Need</em></h2>
+        </div>
+        <div class="sd-related-grid" id="sd-related-grid">
+
+        </div>
+        <div class="sd-related-cta">
+          <a href="services.html" class="sd-all-services-btn" id="sd-all-services-btn">
+            <i data-lucide="arrow-left" aria-hidden="true"></i>
+            View All Services
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-top">
+      <div class="container footer-top-inner">
+
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="WashAura Home">
+            <div class="logo-mark" aria-hidden="true">
+              <img src="assets/logo.png" alt="WashAura Logo" class="logo-img" />
+            </div>
+            <div class="logo-text">
+              <span class="logo-name">WashAura</span>
+              <span class="logo-tagline">Pure Garment Care. Delivered to Your Door.</span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            Thoughtfully crafted laundry, organic dry cleaning, and professional steam pressing with effortless scheduled doorstep pickup.
+          </p>
+
+          <div class="footer-social" aria-label="Social media links">
+            <a href="https://instagram.com" class="social-link" id="social-instagram" aria-label="Instagram"
+              target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" class="social-link" id="social-facebook" aria-label="Facebook"
+              target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://youtube.com" class="social-link" id="social-youtube" aria-label="YouTube" target="_blank"
+              rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-nav-col" aria-label="Explore navigation">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul role="list">
+            <li><a href="index.html" class="footer-link">Home 1</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="journals.html" class="footer-link">Journals</a></li>
+            <li><a href="dashboard.html" class="footer-link">Dashboard</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav-col" aria-label="Customer care navigation">
+          <h3 class="footer-col-title">Customer Care</h3>
+          <ul role="list">
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="pricing.html#faqs" class="footer-link">Pickup Schedule</a></li>
+            <li><a href="pricing.html#faqs" class="footer-link">Garment Care Policy</a></li>
+            <li><a href="pricing.html#faqs" class="footer-link">FAQs</a></li>
+            <li><a href="contact.html" class="footer-link">Privacy Policy</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav-col" aria-label="Additional information navigation">
+          <h3 class="footer-col-title">Additional Information</h3>
+          <ul role="list">
+            <li><a href="coming-soon.html" class="footer-link">Coming Soon</a></li>
+            <li><a href="404.html" class="footer-link">404</a></li>
+            <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h3 class="footer-col-title">Contact Details</h3>
+          <ul class="contact-list" role="list">
+            <li class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
+              <span class="contact-text">Doorstep Pickup &amp; Atelier Delivery</span>
+            </li>
+            <li class="contact-item">
+              <a href="tel:9999988888" class="contact-link">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </span>
+                <span class="contact-text">9999988888</span>
+              </a>
+            </li>
+            <li class="contact-item">
+              <a href="mailto:support@washaura.com" class="contact-link">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </span>
+                <span class="contact-text">support@washaura.com</span>
+              </a>
+            </li>
+            <li class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </span>
+              <span class="contact-text">Mon &ndash; Sun: 7:00 AM &ndash; 9:00 PM PST</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copy">&copy; 2026 WashAura. All Rights Reserved.</p>
+        <nav class="footer-legal" aria-label="Legal navigation">
+          <a href="#privacy" class="footer-legal-link">Privacy</a>
+          <span class="legal-dot">&bull;</span>
+          <a href="#terms" class="footer-legal-link">Terms</a>
+          <span class="legal-dot">&bull;</span>
+          <a href="#cookies" class="footer-legal-link">Cookies</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="home1.js" defer></script>
+  <script src="servicedetail.js" defer></script>
+</body>
+
+</html>

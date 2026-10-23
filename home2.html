@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="PureCare by WashAura (Home 2) — Eco-botanical garment care, organic dry cleaning, and artisan laundry service with convenient doorstep valet pickup." />
+  <meta name="keywords"
+    content="eco laundry service, botanical dry cleaning, wash and fold, cashmere care, organic garment care, valet laundry pickup" />
+  <title>PureCare by WashAura — Eco-Botanical Laundry &amp; Garment Care</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="home2.css" />
+</head>
+
+<body>
+
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header-inner container">
+
+      <a href="index.html" class="logo" aria-label="WashAura Home" id="logo-link">
+        <div class="logo-mark" aria-hidden="true">
+          <img src="assets/logo.png" alt="WashAura Logo" class="logo-img" />
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">WashAura</span>
+          <span class="logo-tagline">Pure Garment Care. Delivered to Your Door.</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list" role="list">
+          <li class="nav-item has-dropdown" id="nav-home-item">
+            <a href="home2.html" class="nav-link nav-dropdown-trigger active" id="nav-home" aria-expanded="false"
+              aria-haspopup="true">
+              <span>Home</span>
+              <i data-lucide="chevron-down" class="dropdown-chevron" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Home versions">
+              <a href="index.html" class="dropdown-item" role="menuitem">
+                <div class="dropdown-item-icon">
+                  <i data-lucide="sparkles" aria-hidden="true"></i>
+                </div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-header">
+                    <span class="dropdown-item-title">Home 1</span>
+                    <span class="dropdown-badge">Classic</span>
+                  </div>
+                  <span class="dropdown-item-desc">WashAura &bull; Laundry &amp; Dry Cleaning</span>
+                </div>
+              </a>
+              <a href="home2.html" class="dropdown-item active" role="menuitem">
+                <div class="dropdown-item-icon icon-ayurveda">
+                  <i data-lucide="leaf" aria-hidden="true"></i>
+                </div>
+                <div class="dropdown-item-text">
+                  <div class="dropdown-item-header">
+                    <span class="dropdown-item-title">Home 2</span>
+                    <span class="dropdown-badge badge-alt">Eco Care</span>
+                  </div>
+                  <span class="dropdown-item-desc">PureCare &bull; Eco-Botanical Garment Care</span>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li><a href="about.html" class="nav-link" id="nav-origin">About</a></li>
+          <li><a href="services.html" class="nav-link" id="nav-collection">Services</a></li>
+          <li><a href="journals.html" class="nav-link" id="nav-ingredients">Journal</a></li>
+          <li><a href="contact.html" class="nav-link" id="nav-philosophy">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link" id="nav-dashboard">Dashboard</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions" role="toolbar" aria-label="Site actions">
+        <button class="toggle-btn rtl-toggle" id="rtl-toggle" aria-label="Toggle text direction" aria-pressed="false"
+          title="Switch text direction (RTL / LTR)">
+          <span class="toggle-label">RTL</span></button>
+
+        <button class="toggle-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"
+          title="Toggle light and dark mode">
+          <span class="theme-icon sun-icon"><i data-lucide="sun" aria-hidden="true"></i></span>
+          <span class="theme-icon moon-icon"><i data-lucide="moon" aria-hidden="true"></i></span>
+        </button>
+
+        <a href="login.html" class="btn btn-primary nav-login-btn" id="nav-login-btn">Login</a>
+
+        <button class="hamburger" id="hamburger-btn" aria-label="Open mobile menu" aria-expanded="false"
+          aria-controls="main-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
+      <div class="search-inner">
+        <div class="search-input-box">
+          <i data-lucide="search" class="search-input-icon" aria-hidden="true"></i>
+          <input type="search" class="search-input" id="search-input"
+            placeholder="Search wash &amp; fold, dry cleaning, delicate care, ironing..." aria-label="Search services"
+            autocomplete="off" />
+          <button class="search-close" id="search-close" aria-label="Close search">
+            <i data-lucide="x" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="search-suggestions" id="search-suggestions">
+          <span class="sugg-label">Popular Searches:</span>
+          <button class="sugg-pill" data-query="Wash &amp; Fold">Wash &amp; Fold</button>
+          <button class="sugg-pill" data-query="Dry Cleaning">Dry Cleaning</button>
+          <button class="sugg-pill" data-query="Cashmere">Cashmere Care</button>
+          <button class="sugg-pill" data-query="Steam Ironing">Steam Press</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-header">
+      <span class="logo-name">WashAura</span>
+      <button class="icon-btn mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item has-dropdown" id="mobile-nav-home-item">
+        <button class="mobile-nav-link mobile-dropdown-btn" id="mobile-home-toggle" aria-expanded="false">
+          <span>Home</span>
+          <i data-lucide="chevron-down" class="mobile-dropdown-chevron" aria-hidden="true"></i>
+        </button>
+        <ul class="mobile-submenu" id="mobile-home-submenu">
+          <li>
+            <a href="index.html" class="mobile-sublink">
+              <i data-lucide="sparkles" aria-hidden="true"></i>
+              <span>Home 1 (Classic)</span>
+            </a>
+          </li>
+          <li>
+            <a href="home2.html" class="mobile-sublink active">
+              <i data-lucide="leaf" aria-hidden="true"></i>
+              <span>Home 2 (Eco Care)</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="journals.html" class="mobile-nav-link">Journal</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+      <li class="mobile-nav-login-item">
+        <a href="login.html" class="btn btn-primary mobile-menu-login-btn" id="mobile-drawer-login-btn">
+          <span>Login</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="mobile-drawer-actions">
+      <div class="mobile-actions-grid">
+        <button class="mobile-action-card cart-action-card"
+          onclick="if(typeof openCartDrawer==='function')openCartDrawer();" aria-label="Open Laundry Hamper">
+          <div class="mobile-card-icon-wrap">
+            <i data-lucide="shopping-bag" aria-hidden="true"></i>
+            <span class="mobile-cart-badge cart-count-badge">0</span>
+          </div>
+          <div class="mobile-card-text">
+            <span class="mobile-card-title">Laundry Hamper</span>
+            <span class="mobile-card-sub">View Hamper</span>
+          </div>
+        </button>
+        <a href="dashboard.html" class="mobile-action-card account-action-card" aria-label="Go to Member Dashboard">
+          <div class="mobile-card-icon-wrap user-icon-wrap">
+            <i data-lucide="user" aria-hidden="true"></i>
+          </div>
+          <div class="mobile-card-text">
+            <span class="mobile-card-title">Member Portal</span>
+            <span class="mobile-card-sub">Account &amp; Pickups</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <p class="mobile-nav-tagline">“Pure Garment Care. Delivered to Your Door.”</p>
+    </div>
+  </div>
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Laundry Hamper" hidden>
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">
+        <i data-lucide="shopping-bag" aria-hidden="true"></i>
+        <h2>Your Laundry Hamper</h2>
+        <span class="cart-drawer-count">(<span id="drawer-item-count">0</span> items)</span>
+      </div>
+      <button class="cart-drawer-close" id="cart-drawer-close" aria-label="Close hamper">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="cart-drawer-body" id="cart-drawer-body">
+      <div class="cart-empty">
+        <div class="cart-empty-icon"><i data-lucide="shopping-bag" aria-hidden="true"></i></div>
+        <p class="cart-empty-text">Your laundry hamper is empty</p>
+        <p class="cart-empty-sub">Explore our gentle garment care and eco dry-cleaning services</p>
+        <a href="services.html" class="btn btn-primary btn-sm" id="empty-cart-shop">Discover Services</a>
+      </div>
+      <div class="cart-items-list" id="cart-items-list"></div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cart-drawer-footer" hidden>
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <strong class="cart-subtotal" id="cart-subtotal">$0.00</strong>
+      </div>
+      <p class="cart-shipping-note">Free valet doorstep pickup &amp; delivery on orders over $50</p>
+      <button class="btn btn-primary btn-full" id="checkout-btn">
+        Schedule Valet Pickup
+        <i data-lucide="arrow-right" class="btn-icon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </aside>
+  <div class="cart-drawer-backdrop" id="cart-drawer-backdrop" aria-hidden="true"></div>
+
+  <main id="main-content">
+
+    <section class="h2-hero-section h2-bg-cream" id="origin" aria-labelledby="h2-hero-title">
+
+      <div class="h2-ambient-glow h2-glow-sage" aria-hidden="true"></div>
+      <div class="h2-ambient-glow h2-glow-lavender" aria-hidden="true"></div>
+
+      <div class="container h2-section-inner">
+        <div class="h2-hero-grid-90">
+
+          <div class="h2-hero-left-clean">
+            <div class="h2-badge">
+              <span class="h2-pulse-dot"></span>
+              <i data-lucide="sparkles" class="h2-badge-icon" aria-hidden="true"></i>
+              <span>ECO-BOTANICAL TEXTILE ATELIER</span>
+            </div>
+
+            <h1 class="h2-hero-title-clean" id="h2-hero-title">
+              Cared For By Nature,<br />
+              <em>Finished With Precision.</em>
+            </h1>
+
+            <p class="h2-hero-sub-clean">
+              PureCare by WashAura returns to the restorative science of plant-based cleaning. Crafted with
+              cold-water enzymes, organic Marseille soapwort, and closed-loop non-toxic dry cleaning.
+            </p>
+
+            <div class="h2-minimal-metrics">
+              <div class="h2-min-metric">
+                <strong>100%</strong>
+                <span>Eco-Enzymes</span>
+              </div>
+              <span class="h2-metric-dot">&bull;</span>
+              <div class="h2-min-metric">
+                <strong>0%</strong>
+                <span>Harsh Solvents</span>
+              </div>
+              <span class="h2-metric-dot">&bull;</span>
+              <div class="h2-min-metric">
+                <strong>24-Hr</strong>
+                <span>Valet Return</span>
+              </div>
+            </div>
+
+            <div class="h2-hero-btn-row">
+              <a href="pricing.html" class="btn btn-primary btn-lg">
+                <span>Schedule Pickup</span>
+                <i data-lucide="arrow-right" class="btn-icon" aria-hidden="true"></i>
+              </a>
+              <a href="services.html" class="btn btn-outline btn-lg">
+                <i data-lucide="sparkles" class="btn-icon" aria-hidden="true"></i>
+                <span>Explore Services</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="h2-hero-right-montage">
+            <div class="h2-montage-container">
+
+              <div class="h2-montage-card h2-montage-main">
+                <img src="assets/laundry-valet-hero.jpg" alt="Artisan laundry and dry cleaning garments"
+                  class="h2-montage-img" loading="eager" />
+                <span class="h2-montage-tag">Pure Botanical Wash</span>
+              </div>
+
+              <div class="h2-montage-card h2-montage-top">
+                <img src="assets/about-folded-linens.jpg" alt="Neatly folded freshly laundered garments"
+                  class="h2-montage-img" loading="eager" />
+                <span class="h2-montage-tag">Gentle Cold Care</span>
+              </div>
+
+              <div class="h2-montage-card h2-montage-bottom">
+                <img src="assets/laundry-delicates.jpg" alt="Fine silk and wool garments"
+                  class="h2-montage-img" loading="eager" />
+                <span class="h2-montage-tag">Cashmere &amp; Silk Safe</span>
+              </div>
+
+              <div class="h2-stamp-badge" aria-hidden="true">
+                <svg viewBox="0 0 100 100" class="h2-stamp-svg">
+                  <path id="stampPath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+                  <text font-size="9" font-weight="700" letter-spacing="1.8" fill="currentColor">
+                    <textPath href="#stampPath">WASHAURA &bull; 100% ECO GARMENT CARE &bull;</textPath>
+                  </text>
+                </svg>
+                <div class="h2-stamp-center">
+                  <i data-lucide="leaf"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="h2-section h2-bg-beige" id="collection" aria-labelledby="h2-sec2-title">
+
+      <div class="h2-ambient-glow h2-glow-lavender" aria-hidden="true"></div>
+
+      <div class="container h2-section-inner">
+
+        <div class="h2-header-center">
+          <div class="h2-badge">
+            <i data-lucide="sun" class="h2-badge-icon" aria-hidden="true"></i>
+            <span>THE DOORSTEP PROTOCOL</span>
+          </div>
+          <h2 class="h2-section-title" id="h2-sec2-title">
+            Effortless Valet.<br />
+            <em>Immaculate Garments.</em>
+          </h2>
+          <p class="h2-section-sub">
+            Transform tedious home laundry into an effortless doorstep valet experience that restores wardrobe
+            vibrancy and saves 4 hours every week.
+          </p>
+        </div>
+
+        <div class="h2-split-grid h2-grid-reversed">
+
+          <div class="h2-col-visual">
+            <div class="h2-img-frame">
+              <img src="assets/about-garment-care.jpg" alt="Master valet inspecting and finishing garments"
+                class="h2-feat-img" loading="lazy" />
+              <div class="h2-img-floating-card h2-float-alt">
+                <div class="h2-float-icon"><i data-lucide="sparkle" aria-hidden="true"></i></div>
+                <div class="h2-float-text">
+                  <strong>3-Step Valet Flow</strong>
+                  <span>Doorstep pickup &amp; next-day delivery</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="h2-col-content">
+            <div class="h2-ritual-steps">
+
+              <div class="h2-step-card">
+                <div class="h2-step-num" aria-hidden="true">01</div>
+                <div class="h2-step-body">
+                  <div class="h2-step-header">
+                    <h3 class="h2-step-title">Schedule &bull; Doorstep Valet</h3>
+                    <span class="h2-step-tag">Step 1 &bull; Contactless</span>
+                  </div>
+                  <p class="h2-step-desc">
+                    Place garments in your weather-resistant WashAura hamper. Our emissions-free valet courier collects
+                    from your doorstep at your chosen 1-hour time window.
+                  </p>
+                </div>
+              </div>
+
+              <div class="h2-step-card active-step">
+                <div class="h2-step-num" aria-hidden="true">02</div>
+                <div class="h2-step-body">
+                  <div class="h2-step-header">
+                    <h3 class="h2-step-title">Inspect &bull; Eco Atelier</h3>
+                    <span class="h2-step-tag">Step 2 &bull; Fiber Science</span>
+                  </div>
+                  <p class="h2-step-desc">
+                    Master fabric technicians inspect fiber tags, treating stains with targeted botanical enzymes and
+                    closed-loop silicone solvents that protect colors.
+                  </p>
+                </div>
+              </div>
+
+              <div class="h2-step-card">
+                <div class="h2-step-num" aria-hidden="true">03</div>
+                <div class="h2-step-body">
+                  <div class="h2-step-header">
+                    <h3 class="h2-step-title">Finish &bull; Hand Pressed</h3>
+                    <span class="h2-step-tag">Step 3 &bull; Doorstep Return</span>
+                  </div>
+                  <p class="h2-step-desc">
+                    Garments are steam-pressed on contour forms, crisply folded or hung on wooden hangers, and delivered
+                    freshly wrapped back to your doorstep.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="h2-btn-row">
+              <a href="services.html" class="btn btn-primary btn-lg">
+                <span>Explore All Services</span>
+                <i data-lucide="arrow-right" class="btn-icon" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="h2-section h2-bg-cream" id="ingredients-story" aria-labelledby="h2-sec3-title">
+
+      <div class="h2-ambient-glow h2-glow-sage" aria-hidden="true"></div>
+
+      <div class="container h2-section-inner">
+
+        <div class="h2-header-center">
+          <div class="h2-badge">
+            <i data-lucide="sprout" class="h2-badge-icon" aria-hidden="true"></i>
+            <span>NON-TOXIC CHEMISTRY</span>
+          </div>
+          <h2 class="h2-section-title" id="h2-sec3-title">
+            Formulations With<br />
+            <em>Pure Fabric Reverence</em>
+          </h2>
+          <p class="h2-section-sub">
+            Hospital-grade cleaning power derived from biodegradable botanical extracts and purified cold-water enzymes
+            that protect fiber tensile strength.
+          </p>
+        </div>
+
+        <div class="h2-split-grid h2-ingredients-split">
+
+          <div class="h2-col-content">
+            <div class="h2-ingredients-grid">
+
+              <div class="h2-ing-card">
+                <div class="h2-ing-icon-box lavender-tint">
+                  <i data-lucide="flower" aria-hidden="true"></i>
+                </div>
+                <div class="h2-ing-info">
+                  <h3 class="h2-ing-name">French Lavender</h3>
+                  <span class="h2-ing-origin">Provence, France</span>
+                  <p class="h2-ing-desc">
+                    Steam-distilled organic lavender providing natural antimicrobial freshening with zero synthetic
+                    artificial perfumes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="h2-ing-card">
+                <div class="h2-ing-icon-box aloe-tint">
+                  <i data-lucide="droplets" aria-hidden="true"></i>
+                </div>
+                <div class="h2-ing-info">
+                  <h3 class="h2-ing-name">Bio-Enzymes</h3>
+                  <span class="h2-ing-origin">Cold-Active Catalysts</span>
+                  <p class="h2-ing-desc">
+                    Naturally targeted proteases and lipases that dissolve food lipids and tannins at gentle room
+                    temperatures.
+                  </p>
+                </div>
+              </div>
+
+              <div class="h2-ing-card">
+                <div class="h2-ing-icon-box shea-tint">
+                  <i data-lucide="package" aria-hidden="true"></i>
+                </div>
+                <div class="h2-ing-info">
+                  <h3 class="h2-ing-name">Marseille Saponins</h3>
+                  <span class="h2-ing-origin">Pure Plant Soap Base</span>
+                  <p class="h2-ing-desc">
+                    Hypoallergenic vegetable soap base that coats fibers in natural softening lipids without synthetic
+                    petroleum silicones.
+                  </p>
+                </div>
+              </div>
+
+              <div class="h2-ing-card">
+                <div class="h2-ing-icon-box oil-tint">
+                  <i data-lucide="sun" aria-hidden="true"></i>
+                </div>
+                <div class="h2-ing-info">
+                  <h3 class="h2-ing-name">Liquid Silicone</h3>
+                  <span class="h2-ing-origin">Closed-Loop Eco Solvent</span>
+                  <p class="h2-ing-desc">
+                    Gentle dry-cleaning fluid carrying one-third the surface tension of water to cleanse delicate silks
+                    with zero shrinkage.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="h2-btn-row h2-btn-center">
+              <a href="pricing.html" class="btn btn-outline btn-lg">
+                <i data-lucide="leaf" class="btn-icon" aria-hidden="true"></i>
+                <span>View Pricing &amp; Plans</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="h2-col-visual h2-ing-visual">
+            <div class="h2-img-frame h2-ing-img-frame">
+              <img src="assets/about-sustainability.jpg" alt="WashAura Eco Dry Cleaning and Laundry Atelier"
+                class="h2-img h2-feat-img" loading="lazy" />
+              <div class="h2-img-floating-card">
+                <div class="h2-float-icon"><i data-lucide="check-circle" aria-hidden="true"></i></div>
+                <div class="h2-float-text">
+                  <strong>Zero Petrochemicals</strong>
+                  <span>100% Biodegradable &amp; Fiber-Safe</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="h2-section h2-bg-beige" id="skin-textures" aria-labelledby="h2-sec-textures-title">
+      <div class="h2-ambient-glow h2-glow-sage" aria-hidden="true"></div>
+
+      <div class="container h2-section-inner">
+
+        <div class="h2-header-center">
+          <div class="h2-badge">
+            <i data-lucide="layers" class="h2-badge-icon" aria-hidden="true"></i>
+            <span>FABRIC CARE MATRIX</span>
+          </div>
+          <h2 class="h2-section-title" id="h2-sec-textures-title">
+            Tailored For Every Textile.<br />
+            <em>Custom Garment Care.</em>
+          </h2>
+          <p class="h2-section-sub">
+            Discover specialized protocols for everyday organic cottons, delicate silk satins, heavyweight draperies,
+            and heirloom knitwear.
+          </p>
+        </div>
+
+        <div class="h2-textures-grid">
+
+          <div class="h2-texture-card">
+            <div class="h2-texture-dual-img">
+              <div class="h2-img-half">
+                <img src="assets/laundry-wash-fold.jpg" alt="Wash and fold laundry basket" loading="lazy" />
+                <span class="h2-half-tag">Service</span>
+              </div>
+              <div class="h2-img-half">
+                <img src="assets/journal-linen-care.jpg" alt="Pristine folded cotton sheets" loading="lazy" />
+                <span class="h2-half-tag">On Fabric</span>
+              </div>
+              <span class="h2-texture-badge">Everyday Wash &amp; Fold</span>
+            </div>
+            <div class="h2-texture-body">
+              <div class="h2-texture-header">
+                <h3 class="h2-texture-title">Organic Cotton &amp; Linen</h3>
+                <span class="h2-skin-pill">Daily Wear &amp; Bedding</span>
+              </div>
+              <p class="h2-texture-desc">
+                Gentle cold-water wash, natural enzyme bath, and moisture-controlled fluff drying that eliminates
+                shrinkage and keeps fabrics soft.
+              </p>
+              <div class="h2-texture-meta">
+                <div class="h2-meta-item">
+                  <strong>Finish Feel:</strong>
+                  <span>Crisply folded &amp; organized</span>
+                </div>
+                <div class="h2-meta-item">
+                  <strong>Wash Cycle:</strong>
+                  <span>20°C Bio-Enzyme Gentle</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="h2-texture-card active-texture-card">
+            <div class="h2-texture-dual-img">
+              <div class="h2-img-half">
+                <img src="assets/laundry-dry-clean.jpg" alt="Eco dry cleaning drum" loading="lazy" />
+                <span class="h2-half-tag">Service</span>
+              </div>
+              <div class="h2-img-half">
+                <img src="assets/about-atelier-hero.jpg" alt="Delicate silk blouse on hanger" loading="lazy" />
+                <span class="h2-half-tag">On Fabric</span>
+              </div>
+              <span class="h2-texture-badge">Couture Care</span>
+            </div>
+            <div class="h2-texture-body">
+              <div class="h2-texture-header">
+                <h3 class="h2-texture-title">Mulberry Silk &amp; Chiffon</h3>
+                <span class="h2-skin-pill">Formal &amp; Designer Silks</span>
+              </div>
+              <p class="h2-texture-desc">
+                Closed-loop liquid silicone cleaning that protects delicate weave tension, maintains vibrant color
+                depth, and prevents water stains.
+              </p>
+              <div class="h2-texture-meta">
+                <div class="h2-meta-item">
+                  <strong>Finish Feel:</strong>
+                  <span>Hand-hung on contoured cedar</span>
+                </div>
+                <div class="h2-meta-item">
+                  <strong>Wash Cycle:</strong>
+                  <span>Non-aqueous liquid silicone</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="h2-texture-card">
+            <div class="h2-texture-dual-img">
+              <div class="h2-img-half">
+                <img src="assets/journal-cashmere.jpg" alt="Cashmere sweater conditioning" loading="lazy" />
+                <span class="h2-half-tag">Service</span>
+              </div>
+              <div class="h2-img-half">
+                <img src="assets/laundry-shoes.jpg" alt="Carefully curated designer wardrobe" loading="lazy" />
+                <span class="h2-half-tag">On Fabric</span>
+              </div>
+              <span class="h2-texture-badge">Zero-Agitation</span>
+            </div>
+            <div class="h2-texture-body">
+              <div class="h2-texture-header">
+                <h3 class="h2-texture-title">Cashmere &amp; Merino Wool</h3>
+                <span class="h2-skin-pill">Knitwear &amp; Woolens</span>
+              </div>
+              <p class="h2-texture-desc">
+                Subterranean saponin immersion baths and horizontal mesh flat-block air drying that completely
+                eliminates felting and fabric pilling.
+              </p>
+              <div class="h2-texture-meta">
+                <div class="h2-meta-item">
+                  <strong>Finish Feel:</strong>
+                  <span>Sonic de-pilled &amp; blocked</span>
+                </div>
+                <div class="h2-meta-item">
+                  <strong>Wash Cycle:</strong>
+                  <span>18°C Lanolin restoration</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="h2-texture-card">
+            <div class="h2-texture-dual-img">
+              <div class="h2-img-half">
+                <img src="assets/process-pressing.jpg" alt="Steam ironing shirt collar" loading="lazy" />
+                <span class="h2-half-tag">Service</span>
+              </div>
+              <div class="h2-img-half">
+                <img src="assets/laundry-curtains.jpg" alt="Pristine interior drapery" loading="lazy" />
+                <span class="h2-half-tag">On Fabric</span>
+              </div>
+              <span class="h2-texture-badge">Artisan Steam</span>
+            </div>
+            <div class="h2-texture-body">
+              <div class="h2-texture-header">
+                <h3 class="h2-texture-title">Tailored Shirts &amp; Drapery</h3>
+                <span class="h2-skin-pill">Business &amp; Interiors</span>
+              </div>
+              <p class="h2-texture-desc">
+                High-pressure Italian micro-steam press sculpting razor-sharp plackets, smooth collars, and
+                triple-pinch curtain pleats.
+              </p>
+              <div class="h2-texture-meta">
+                <div class="h2-meta-item">
+                  <strong>Finish Feel:</strong>
+                  <span>Vacuum cooled &amp; inspected</span>
+                </div>
+                <div class="h2-meta-item">
+                  <strong>Wash Cycle:</strong>
+                  <span>4.5-bar micro-steam</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="h2-section h2-bg-cream" id="community-reviews" aria-labelledby="h2-sec-reviews-title">
+      <div class="h2-ambient-glow h2-glow-lavender" aria-hidden="true"></div>
+
+      <div class="container h2-section-inner">
+
+        <div class="h2-header-center">
+          <div class="h2-badge">
+            <i data-lucide="heart" class="h2-badge-icon" aria-hidden="true"></i>
+            <span>MEMBER TESTIMONIALS</span>
+          </div>
+          <h2 class="h2-section-title" id="h2-sec-reviews-title">
+            Loved By Wardrobes.<br />
+            <em>Cherished In Daily Life.</em>
+          </h2>
+          <p class="h2-section-sub">
+            Real feedback from busy professionals, families, and designers who trust WashAura for their regular garment
+            care.
+          </p>
+        </div>
+
+        <div class="h2-reviews-trust-bar">
+          <div class="h2-trust-item">
+            <strong>4.98 / 5.0 Rating</strong>
+            <span>Based on 2,400+ Orders</span>
+          </div>
+          <div class="h2-trust-item">
+            <strong>99.4% On-Time Valet</strong>
+            <span>Guaranteed Turnaround</span>
+          </div>
+          <div class="h2-trust-item">
+            <strong>100% Eco-Solvents</strong>
+            <span>Zero Petrochemicals</span>
+          </div>
+        </div>
+
+        <div class="h2-reviews-grid">
+
+          <div class="h2-review-card">
+            <div class="h2-review-img-wrap">
+              <img src="assets/process-inspection.jpg" alt="Garment inspection suit care" loading="lazy" />
+              <span class="h2-review-badge">Dry Cleaning</span>
+            </div>
+            <div class="h2-review-body">
+              <div class="h2-review-stars">
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+              </div>
+              <p class="h2-review-quote">
+                “My silk dresses and tailored blazers have never looked this immaculate. There is zero chemical odor,
+                just crisp, fresh perfection delivered directly to my front door.”
+              </p>
+              <div class="h2-review-author">
+                <div class="h2-author-avatar">EM</div>
+                <div class="h2-author-meta">
+                  <strong>Elena Montgomery</strong>
+                  <span>Verified Member &bull; Couture Dry Cleaning</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="h2-review-card">
+            <div class="h2-review-img-wrap">
+              <img src="assets/process-washing.jpg" alt="Neatly folded wash and fold garments" loading="lazy" />
+              <span class="h2-review-badge">Wash &amp; Fold</span>
+            </div>
+            <div class="h2-review-body">
+              <div class="h2-review-stars">
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+              </div>
+              <p class="h2-review-quote">
+                “The weekly wash &amp; fold subscription has saved our family at least 5 hours every weekend. Everything
+                arrives neatly bundled in labeled cotton hampers.”
+              </p>
+              <div class="h2-review-author">
+                <div class="h2-author-avatar">JV</div>
+                <div class="h2-author-meta">
+                  <strong>Julian Vance</strong>
+                  <span>Verified Member &bull; Weekly Wash &amp; Fold</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="h2-review-card">
+            <div class="h2-review-img-wrap">
+              <img src="assets/process-packaging.jpg" alt="Valet garment packaging into protective bag" loading="lazy" />
+              <span class="h2-review-badge">Steam Press</span>
+            </div>
+            <div class="h2-review-body">
+              <div class="h2-review-stars">
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+              </div>
+              <p class="h2-review-quote">
+                “The hand-finished collar and sleeve pressing on my Oxford shirts rivals the finest hotel valets in
+                Milan. Simply an unmatched level of care and convenience.”
+              </p>
+              <div class="h2-review-author">
+                <div class="h2-author-avatar">SL</div>
+                <div class="h2-author-meta">
+                  <strong>Sophia Laurier</strong>
+                  <span>Verified Member &bull; Artisan Steam Press</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="h2-section h2-bg-beige" id="get-started" aria-labelledby="h2-sec5-title">
+
+      <div class="h2-ambient-glow h2-glow-sage" aria-hidden="true"></div>
+
+      <div class="container h2-section-inner">
+        <div class="h2-closing-card">
+          <div class="h2-badge">
+            <i data-lucide="sparkles" class="h2-badge-icon" aria-hidden="true"></i>
+            <span>WASHAURA VALET</span>
+          </div>
+
+          <h2 class="h2-closing-title" id="h2-sec5-title">
+            Make Space For<br />
+            <em>Effortless Wardrobe Care.</em>
+          </h2>
+
+          <p class="h2-closing-desc">
+            Reclaim your weekends. Schedule your first doorstep laundry or dry-cleaning pickup today and experience the
+            luxury of professionally cared-for garments.
+          </p>
+
+          <div class="h2-closing-perks-row">
+            <div class="h2-perk-item">
+              <i data-lucide="truck" aria-hidden="true"></i>
+              <span>Carbon-Neutral Valet Pickup</span>
+            </div>
+            <span class="h2-perk-dot">&bull;</span>
+            <div class="h2-perk-item">
+              <i data-lucide="shield-check" aria-hidden="true"></i>
+              <span>100% Garment Safety Guarantee</span>
+            </div>
+            <span class="h2-perk-dot">&bull;</span>
+            <div class="h2-perk-item">
+              <i data-lucide="gift" aria-hidden="true"></i>
+              <span>Complimentary Laundry Hamper</span>
+            </div>
+          </div>
+
+          <div class="h2-closing-actions">
+            <a href="pricing.html" class="btn btn-primary btn-lg">
+              <span>Schedule Valet Pickup</span>
+              <i data-lucide="arrow-right" class="btn-icon" aria-hidden="true"></i>
+            </a>
+            <a href="services.html" class="btn btn-outline btn-lg">
+              <i data-lucide="leaf" class="btn-icon" aria-hidden="true"></i>
+              <span>Explore All Services</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact" role="contentinfo">
+    <div class="footer-top">
+      <div class="container footer-top-inner">
+
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="WashAura Home">
+            <div class="logo-mark" aria-hidden="true">
+              <img src="assets/logo.png" alt="WashAura Logo" class="logo-img" />
+            </div>
+            <div class="logo-text">
+              <span class="logo-name">WashAura</span>
+              <span class="logo-tagline">Pure Garment Care. Delivered to Your Door.</span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            WashAura provides professional garment care, organic dry cleaning, eco-friendly wash &amp; fold, and artisan
+            steam ironing with contactless doorstep pickup and delivery.
+          </p>
+
+          <div class="footer-social" aria-label="Social media links">
+            <a href="https://instagram.com" class="social-link" id="social-instagram" aria-label="Instagram"
+              target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" class="social-link" id="social-facebook" aria-label="Facebook"
+              target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://youtube.com" class="social-link" id="social-youtube" aria-label="YouTube" target="_blank"
+              rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-nav-col" aria-label="Explore navigation">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul role="list">
+            <li><a href="index.html" class="footer-link">Home 1</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="journals.html" class="footer-link">Journals</a></li>
+            <li><a href="dashboard.html" class="footer-link">Dashboard</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav-col" aria-label="Customer care navigation">
+          <h3 class="footer-col-title">Customer Care</h3>
+          <ul role="list">
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="pricing.html#faqs" class="footer-link">Valet Pickup</a></li>
+            <li><a href="pricing.html#faqs" class="footer-link">Turnaround</a></li>
+            <li><a href="pricing.html#faqs" class="footer-link">FAQs</a></li>
+            <li><a href="contact.html" class="footer-link">Privacy Policy</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav-col" aria-label="Additional information navigation">
+          <h3 class="footer-col-title">Additional Information</h3>
+          <ul role="list">
+            <li><a href="coming-soon.html" class="footer-link">Coming Soon</a></li>
+            <li><a href="404.html" class="footer-link">404</a></li>
+            <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h3 class="footer-col-title">Contact Details</h3>
+          <ul class="contact-list" role="list">
+            <li class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
+              <span class="contact-text">Central Valet Atelier &amp; Processing Facility</span>
+            </li>
+            <li class="contact-item">
+              <a href="tel:9999988888" class="contact-link">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </span>
+                <span class="contact-text">9999988888</span>
+              </a>
+            </li>
+            <li class="contact-item">
+              <a href="mailto:care@washaura.com" class="contact-link">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </span>
+                <span class="contact-text">care@washaura.com</span>
+              </a>
+            </li>
+            <li class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </span>
+              <span class="contact-text">Mon &ndash; Fri: 8:00 AM &ndash; 8:00 PM PST</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copy">&copy; 2026 WashAura. All Rights Reserved.</p>
+        <nav class="footer-legal" aria-label="Legal navigation">
+          <a href="#privacy" class="footer-legal-link">Privacy</a>
+          <span class="legal-dot">&bull;</span>
+          <a href="#terms" class="footer-legal-link">Terms</a>
+          <span class="legal-dot">&bull;</span>
+          <a href="#cookies" class="footer-legal-link">Cookies</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="cart-toast" role="alert" aria-live="polite" aria-atomic="true" hidden>
+    <div class="toast-icon-wrap">
+      <i data-lucide="sparkles" aria-hidden="true"></i>
+    </div>
+    <div class="toast-content">
+      <strong id="toast-title">Added to your Hamper!</strong>
+      <span id="toast-msg">Service added successfully</span>
+    </div>
+  </div>
+
+  <script src="home2.js" defer></script>
+</body>
+
+</html>

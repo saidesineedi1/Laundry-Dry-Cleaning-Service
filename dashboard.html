@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="WashAura Member &amp; Operations Dashboard — Track laundry pickups, dry cleaning batches, customer preferences, and care metrics." />
+  <title>Dashboard — WashAura | Garment Care &amp; Operations Portal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body class="db-body">
+
+  <header class="db-top-header" id="db-top-header" role="banner">
+    <div class="db-header-inner">
+
+      <div class="db-header-left">
+        <a href="index.html" class="db-brand-logo" id="db-brand-logo" aria-label="Redirect to WashAura Home">
+          <div class="logo-mark" aria-hidden="true">
+            <img src="assets/logo.png" alt="WashAura Logo" class="logo-img" />
+          </div>
+          <div class="db-logo-text">
+            <span class="db-logo-name">WashAura</span>
+            <span class="db-logo-sub">Pure Garment Care. Delivered to Your Door.</span>
+          </div>
+        </a>
+
+        <div class="db-header-divider" aria-hidden="true"></div>
+
+        <div class="db-welcome-box">
+          <span class="db-welcome-badge"><i data-lucide="sparkles" aria-hidden="true"></i> Premium Portal</span>
+          <h1 class="db-welcome-text">Welcome back ,<span class="db-user-highlight">Dashboard</span></h1>
+        </div>
+      </div>
+
+      <div class="db-header-right">
+
+        <div class="db-search-box">
+          <i data-lucide="search" aria-hidden="true"></i>
+          <input type="text" class="db-search-input" placeholder="Search orders, batches, reports..."
+            aria-label="Search dashboard" />
+        </div>
+
+        <button class="toggle-btn rtl-toggle" id="rtl-toggle" aria-label="Toggle text direction" aria-pressed="false"
+          title="Switch text direction (RTL / LTR)">
+          <span class="toggle-label">RTL</span></button>
+
+        <button class="toggle-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"
+          title="Toggle light and dark mode">
+          <span class="theme-icon sun-icon"><i data-lucide="sun" aria-hidden="true"></i></span>
+          <span class="theme-icon moon-icon"><i data-lucide="moon" aria-hidden="true"></i></span>
+        </button>
+
+        <button class="db-icon-btn" id="db-notif-btn" aria-label="Open notifications" title="Notifications"
+          onclick="toggleNotifications()">
+          <i data-lucide="bell" aria-hidden="true"></i>
+          <span class="db-notif-badge">3</span>
+        </button>
+
+        <div class="db-profile-wrapper">
+          <button class="db-profile-btn" id="db-profile-btn" onclick="toggleProfileDropdown()" aria-expanded="false"
+            aria-haspopup="true" aria-label="Open user profile menu">
+            <img src="assets/founder1.jpg" alt="Elena Vance Profile" class="db-profile-img" />
+            <div class="db-profile-info">
+              <span class="db-profile-name">Elena Vance</span>
+              <span class="db-profile-role">Valet Operations Admin</span>
+            </div>
+            <i data-lucide="chevron-down" class="db-profile-chevron" aria-hidden="true"></i>
+          </button>
+
+          <div class="db-profile-dropdown" id="db-profile-dropdown" hidden>
+            <div class="db-pmenu-header">
+              <img src="assets/founder1.jpg" alt="Elena Vance" class="db-pmenu-img" />
+              <div>
+                <strong>Elena Vance</strong>
+                <p>care@washaura.com</p>
+              </div>
+            </div>
+            <div class="db-pmenu-divider"></div>
+            <a href="#" class="db-pmenu-item" onclick="switchTab('settings')"><i data-lucide="user"
+                aria-hidden="true"></i> Account Settings</a>
+            <a href="#" class="db-pmenu-item" onclick="switchTab('settings')"><i data-lucide="sliders"
+                aria-hidden="true"></i> Garment Preferences</a>
+            <a href="#" class="db-pmenu-item" onclick="switchTab('inventory')"><i data-lucide="package"
+                aria-hidden="true"></i> Facility Logistics</a>
+            <div class="db-pmenu-divider"></div>
+            <a href="index.html" class="db-pmenu-item db-pmenu-logout"><i data-lucide="log-out" aria-hidden="true"></i>
+              Log Out to Home</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="db-notif-drawer" id="db-notif-drawer" hidden aria-label="Notifications Panel">
+    <div class="db-notif-header">
+      <h3><i data-lucide="bell" aria-hidden="true"></i> Notifications</h3>
+      <button class="db-notif-close" onclick="toggleNotifications()"><i data-lucide="x" aria-hidden="true"></i></button>
+    </div>
+    <div class="db-notif-list">
+      <div class="db-notif-item unread">
+        <div class="db-notif-icon icon-purple"><i data-lucide="shopping-bag" aria-hidden="true"></i></div>
+        <div class="db-notif-content">
+          <p><strong>New Pickup #4829</strong> scheduled for Wash &amp; Fold (32 lbs)</p>
+          <span>5 minutes ago</span>
+        </div>
+      </div>
+      <div class="db-notif-item unread">
+        <div class="db-notif-icon icon-green"><i data-lucide="leaf" aria-hidden="true"></i></div>
+        <div class="db-notif-content">
+          <p><strong>Solvent Batch #ECO-904</strong> purity inspection passed 100%</p>
+          <span>1 hour ago</span>
+        </div>
+      </div>
+      <div class="db-notif-item unread">
+        <div class="db-notif-icon icon-gold"><i data-lucide="alert-triangle" aria-hidden="true"></i></div>
+        <div class="db-notif-content">
+          <p><strong>Low Stock Alert:</strong> Eco Detergent Drum (14 units remaining)</p>
+          <span>3 hours ago</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="db-layout-container">
+
+    <aside class="db-sidebar" id="db-sidebar" aria-label="Dashboard Categories Navigation">
+      <div class="db-sidebar-inner">
+        <span class="db-nav-label">MAIN NAVIGATION</span>
+
+        <nav class="db-side-nav" role="tablist">
+
+          <button class="db-nav-btn active" data-tab="analytics" onclick="switchTab('analytics')" role="tab"
+            aria-selected="true" id="tab-btn-analytics">
+            <span class="db-nav-btn-icon"><i data-lucide="bar-chart-3" aria-hidden="true"></i></span>
+            <span class="db-nav-btn-text">Overview &amp; Analytics</span>
+            <span class="db-nav-badge">Live</span>
+          </button>
+
+          <button class="db-nav-btn" data-tab="orders" onclick="switchTab('orders')" role="tab" aria-selected="false"
+            id="tab-btn-orders">
+            <span class="db-nav-btn-icon"><i data-lucide="shopping-cart" aria-hidden="true"></i></span>
+            <span class="db-nav-btn-text">Pickups &amp; Orders</span>
+            <span class="db-nav-count">14</span>
+          </button>
+
+          <button class="db-nav-btn" data-tab="inventory" onclick="switchTab('inventory')" role="tab"
+            aria-selected="false" id="tab-btn-inventory">
+            <span class="db-nav-btn-icon"><i data-lucide="package" aria-hidden="true"></i></span>
+            <span class="db-nav-btn-text">Facility Logistics</span>
+          </button>
+
+          <button class="db-nav-btn" data-tab="customers" onclick="switchTab('customers')" role="tab"
+            aria-selected="false" id="tab-btn-customers">
+            <span class="db-nav-btn-icon"><i data-lucide="users" aria-hidden="true"></i></span>
+            <span class="db-nav-btn-text">Customer Insights</span>
+          </button>
+
+          <button class="db-nav-btn" data-tab="settings" onclick="switchTab('settings')" role="tab"
+            aria-selected="false" id="tab-btn-settings">
+            <span class="db-nav-btn-icon"><i data-lucide="settings" aria-hidden="true"></i></span>
+            <span class="db-nav-btn-text">Settings &amp; Prefs</span>
+          </button>
+        </nav>
+
+        <div class="db-sidebar-card">
+          <div class="db-scard-icon"><i data-lucide="shield-check" aria-hidden="true"></i></div>
+          <h4>Certified Eco-Clean Protocol</h4>
+          <p>All cleaning facilities meet 100% non-toxic, PERC-free environmental standards.</p>
+          <a href="services.html" class="db-scard-link">View Care Standards →</a>
+        </div>
+
+        <div class="db-sidebar-user-block">
+          <div class="db-suser-info" onclick="switchTab('settings')" role="button" tabindex="0"
+            title="Open Settings & Preferences">
+            <img src="assets/founder1.jpg" alt="Elena Vance" class="db-suser-img" />
+            <div class="db-suser-details">
+              <span class="db-suser-name">Elena Vance</span>
+              <span class="db-suser-role">Settings &amp; Prefs →</span>
+            </div>
+          </div>
+          <button class="db-icon-btn db-suser-notif" aria-label="Open notifications" title="Notifications"
+            onclick="toggleNotifications()">
+            <i data-lucide="bell" aria-hidden="true"></i>
+            <span class="db-notif-badge">3</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="db-main-content" id="db-main-content">
+
+      <section class="db-tab-pane active" id="pane-analytics" role="tabpanel" aria-labelledby="tab-btn-analytics">
+
+        <div class="db-kpi-grid">
+
+          <div class="db-kpi-card">
+            <div class="db-kpi-header">
+              <span class="db-kpi-title">Monthly Revenue</span>
+              <span class="db-kpi-icon icon-purple"><i data-lucide="dollar-sign" aria-hidden="true"></i></span>
+            </div>
+            <div class="db-kpi-val">$48,250.00</div>
+            <div class="db-kpi-footer">
+              <span class="db-kpi-trend trend-up"><i data-lucide="trending-up" aria-hidden="true"></i> +18.4%</span>
+              <span class="db-kpi-note">vs last month</span>
+            </div>
+          </div>
+
+          <div class="db-kpi-card">
+            <div class="db-kpi-header">
+              <span class="db-kpi-title">Total Pickups</span>
+              <span class="db-kpi-icon icon-green"><i data-lucide="truck" aria-hidden="true"></i></span>
+            </div>
+            <div class="db-kpi-val">1,420</div>
+            <div class="db-kpi-footer">
+              <span class="db-kpi-trend trend-up"><i data-lucide="trending-up" aria-hidden="true"></i> +12.1%</span>
+              <span class="db-kpi-note">vs last month</span>
+            </div>
+          </div>
+
+          <div class="db-kpi-card">
+            <div class="db-kpi-header">
+              <span class="db-kpi-title">Active Subscribers</span>
+              <span class="db-kpi-icon icon-gold"><i data-lucide="heart" aria-hidden="true"></i></span>
+            </div>
+            <div class="db-kpi-val">3,890</div>
+            <div class="db-kpi-footer">
+              <span class="db-kpi-trend trend-up"><i data-lucide="trending-up" aria-hidden="true"></i> +24.8%</span>
+              <span class="db-kpi-note">repeat laundry members</span>
+            </div>
+          </div>
+
+          <div class="db-kpi-card">
+            <div class="db-kpi-header">
+              <span class="db-kpi-title">Machine &amp; Fleet Health</span>
+              <span class="db-kpi-icon icon-blue"><i data-lucide="check-circle-2" aria-hidden="true"></i></span>
+            </div>
+            <div class="db-kpi-val">98.4%</div>
+            <div class="db-kpi-footer">
+              <span class="db-kpi-trend trend-neutral"><i data-lucide="check" aria-hidden="true"></i> Optimal</span>
+              <span class="db-kpi-note">42 active wash cycles</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="db-charts-row">
+
+          <div class="db-chart-card db-chart-large">
+            <div class="db-ccard-header">
+              <div>
+                <h3 class="db-ccard-title">Revenue &amp; Pickup Growth</h3>
+                <p class="db-ccard-sub">Monthly trend comparison for garment care subscriptions &amp; pickups</p>
+              </div>
+              <div class="db-ccard-actions">
+                <button class="db-pill-btn active">6 Months</button>
+                <button class="db-pill-btn">1 Year</button>
+              </div>
+            </div>
+            <div class="db-chart-box">
+              <canvas id="chart-revenue-line"></canvas>
+            </div>
+          </div>
+
+          <div class="db-chart-card db-chart-medium">
+            <div class="db-ccard-header">
+              <div>
+                <h3 class="db-ccard-title">Service Volume</h3>
+                <p class="db-ccard-sub">Garments processed across laundry &amp; dry cleaning lines</p>
+              </div>
+            </div>
+            <div class="db-chart-box">
+              <canvas id="chart-category-bar"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="db-charts-row">
+
+          <div class="db-chart-card db-chart-small">
+            <div class="db-ccard-header">
+              <h3 class="db-ccard-title">Fabric Composition</h3>
+              <p class="db-ccard-sub">Distribution by intake fabric composition</p>
+            </div>
+            <div class="db-chart-box doughnut-box">
+              <canvas id="chart-origin-doughnut"></canvas>
+            </div>
+          </div>
+
+          <div class="db-chart-card db-chart-wide-table">
+            <div class="db-ccard-header">
+              <h3 class="db-ccard-title">Recent Laundry Pickups</h3>
+              <a href="#" class="db-ccard-link" onclick="switchTab('orders')">View All Orders →</a>
+            </div>
+            <div class="db-table-wrapper">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Service &amp; Garments</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#WA-4829</strong></td>
+                    <td>
+                      <div class="db-table-user">
+                        <img src="assets/founder1.jpg" alt="Aria F." />
+                        <span>Aria Fontaine</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="db-table-prod">
+                        <img src="assets/laundry-wash-fold.jpg" alt="Express Wash &amp; Fold"
+                          class="db-tprod-img" />
+                        <span>Express Wash &amp; Fold (32 lbs)</span>
+                      </div>
+                    </td>
+                    <td>$89.00</td>
+                    <td>Aug 27, 2026</td>
+                    <td><span class="db-status status-shipped">Out for Delivery</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#WA-4828</strong></td>
+                    <td>
+                      <div class="db-table-user">
+                        <img src="assets/founder2.jpg" alt="Mara E." />
+                        <span>Dr. Mara Elise</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="db-table-prod">
+                        <img src="assets/laundry-dry-clean.jpg" alt="Wool Suit Dry Cleaning" class="db-tprod-img" />
+                        <span>Wool Suit Dry Cleaning (3 Pcs)</span>
+                      </div>
+                    </td>
+                    <td>$124.00</td>
+                    <td>Aug 27, 2026</td>
+                    <td><span class="db-status status-processing">Cleaning</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#WA-4827</strong></td>
+                    <td>
+                      <div class="db-table-user">
+                        <img src="assets/founder3.jpg" alt="Sage W." />
+                        <span>Sage Williams</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="db-table-prod">
+                        <img src="assets/laundry-curtains.jpg" alt="Curtain Steam Pressing"
+                          class="db-tprod-img" />
+                        <span>Curtain Steam Pressing (4 Panels)</span>
+                      </div>
+                    </td>
+                    <td>$56.00</td>
+                    <td>Aug 26, 2026</td>
+                    <td><span class="db-status status-delivered">Delivered</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#WA-4826</strong></td>
+                    <td>
+                      <div class="db-table-user">
+                        <img src="assets/founder1.jpg" alt="Luna C." />
+                        <span>Luna Cassidy</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="db-table-prod">
+                        <img src="assets/laundry-delicates.jpg" alt="Silk Blouse &amp; Cashmere Care" class="db-tprod-img" />
+                        <span>Silk Blouse &amp; Cashmere Care</span>
+                      </div>
+                    </td>
+                    <td>$42.00</td>
+                    <td>Aug 26, 2026</td>
+                    <td><span class="db-status status-delivered">Delivered</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="db-tab-pane" id="pane-orders" role="tabpanel" aria-labelledby="tab-btn-orders" hidden>
+        <div class="db-pane-header">
+          <h2>Pickups &amp; Orders Management</h2>
+          <p>Real-time pickup scheduling, fulfillment tracking, and transaction history.</p>
+        </div>
+
+        <div class="db-charts-row">
+          <div class="db-chart-card db-chart-full">
+            <div class="db-ccard-header">
+              <h3 class="db-ccard-title">Weekly Processing Performance</h3>
+            </div>
+            <div class="db-chart-box">
+              <canvas id="chart-weekly-sales-bar"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="db-chart-card margin-top-24">
+          <div class="db-ccard-header">
+            <h3 class="db-ccard-title">All Recent Transactions</h3>
+            <input type="text" class="db-search-input" placeholder="Filter orders..." />
+          </div>
+          <div class="db-table-wrapper">
+            <table class="db-table">
+              <thead>
+                <tr>
+                  <th>Order</th>
+                  <th>Customer</th>
+                  <th>Service</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#WA-4825</td>
+                  <td>Clara Bennett</td>
+                  <td>Executive Valet (20 lbs + 2 Suits)</td>
+                  <td>2 Items</td>
+                  <td>$76.00</td>
+                  <td><span class="db-status status-delivered">Delivered</span></td>
+                </tr>
+                <tr>
+                  <td>#WA-4824</td>
+                  <td>Julian Thorne</td>
+                  <td>Bedding &amp; Linen Care Package</td>
+                  <td>1 Set</td>
+                  <td>$165.00</td>
+                  <td><span class="db-status status-processing">Cleaning</span></td>
+                </tr>
+                <tr>
+                  <td>#WA-4823</td>
+                  <td>Sophie Laurent</td>
+                  <td>Wedding Dress Preservation</td>
+                  <td>1 Gown</td>
+                  <td>$112.00</td>
+                  <td><span class="db-status status-delivered">Delivered</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="db-tab-pane" id="pane-inventory" role="tabpanel" aria-labelledby="tab-btn-inventory" hidden>
+        <div class="db-pane-header">
+          <h2>Facility Logistics &amp; Eco-Solvent Inventory</h2>
+          <p>Monitor biodegradable detergents, closed-loop silicone solvent purity, and machine cycle metrics.</p>
+        </div>
+
+        <div class="db-kpi-grid">
+          <div class="db-kpi-card">
+            <div class="db-kpi-header">
+              <span class="db-kpi-title">Eco Detergent &amp; Solvents</span>
+              <span class="db-kpi-icon icon-green"><i data-lucide="droplet" aria-hidden="true"></i></span>
+            </div>
+            <div class="db-kpi-val">4,850 L</div>
+            <div class="db-kpi-footer">
+              <span class="db-kpi-trend trend-up"><i data-lucide="trending-up" aria-hidden="true"></i> +12.4%</span>
+              <span class="db-kpi-note">vs quarterly stock</span>
+            </div>
+          </div>
+
+          <div class="db-kpi-card">
+            <div class="db-kpi-header">
+              <span class="db-kpi-title">Active Wash Cycles</span>
+              <span class="db-kpi-icon icon-purple"><i data-lucide="package" aria-hidden="true"></i></span>
+            </div>
+            <div class="db-kpi-val">42 Cycles</div>
+            <div class="db-kpi-footer">
+              <span class="db-kpi-trend trend-neutral"><i data-lucide="shield-check" aria-hidden="true"></i> 100% Eco-Safe</span>
+              <span class="db-kpi-note">compliance</span>
+            </div>
+          </div>
+
+          <div class="db-kpi-card">
+            <div class="db-kpi-header">
+              <span class="db-kpi-title">Solvent Purity Rating</span>
+              <span class="db-kpi-icon icon-gold"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+            </div>
+            <div class="db-kpi-val">99.8%</div>
+            <div class="db-kpi-footer">
+              <span class="db-kpi-trend trend-up"><i data-lucide="check" aria-hidden="true"></i> Lab Passed</span>
+              <span class="db-kpi-note">zero PERC or residue</span>
+            </div>
+          </div>
+
+          <div class="db-kpi-card">
+            <div class="db-kpi-header">
+              <span class="db-kpi-title">Low Supply Alerts</span>
+              <span class="db-kpi-icon icon-blue"><i data-lucide="alert-triangle" aria-hidden="true"></i></span>
+            </div>
+            <div class="db-kpi-val">2 Items</div>
+            <div class="db-kpi-footer">
+              <span class="db-kpi-trend trend-neutral" style="background: rgba(231,76,60,0.15); color: #c0392b;">Action
+                Required</span>
+              <span class="db-kpi-note">Starch &amp; Garment Bags</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="db-inventory-grid margin-bottom-28">
+          <div class="db-inv-card">
+            <div class="db-inv-header">
+              <h4>Plant-Based Eco Detergent</h4>
+              <span class="db-status status-delivered">88% Stocked</span>
+            </div>
+            <div class="db-progress-bar">
+              <div class="db-pfill" style="width: 88%;"></div>
+            </div>
+            <p class="db-inv-meta">Batch #DET-2026-B9 &bull; Cold-Water Formula &bull; 410 Liters Remaining</p>
+          </div>
+
+          <div class="db-inv-card">
+            <div class="db-inv-header">
+              <h4>Closed-Loop Silicone Solvent</h4>
+              <span class="db-status status-delivered">94% Stocked</span>
+            </div>
+            <div class="db-progress-bar">
+              <div class="db-pfill" style="width: 94%;"></div>
+            </div>
+            <p class="db-inv-meta">Batch #SOL-2026-A1 &bull; Odorless &amp; Pure &bull; 540 Liters Remaining</p>
+          </div>
+
+          <div class="db-inv-card">
+            <div class="db-inv-header">
+              <h4>French Lavender Finishing Mist</h4>
+              <span class="db-status status-processing">14% Low Stock</span>
+            </div>
+            <div class="db-progress-bar">
+              <div class="db-pfill pfill-warn" style="width: 14%;"></div>
+            </div>
+            <p class="db-inv-meta">Batch #MST-2026-C4 &bull; Hypoallergenic &bull; Reorder Pending</p>
+          </div>
+        </div>
+
+        <div class="db-chart-card">
+          <div class="db-ccard-header">
+            <div>
+              <h3 class="db-ccard-title">Certified Eco Solvents &amp; Cleaning Agents</h3>
+              <p class="db-ccard-sub">Detailed breakdown of plant-based detergents, silicone solvents, and hypoallergenic finishes</p>
+            </div>
+            <button class="btn btn-primary jn-btn-primary" style="padding: 6px 14px; font-size: 0.8rem;"
+              onclick="alert('Initiating supply order request!')">+ Log Supply Order</button>
+          </div>
+          <div class="db-table-wrapper">
+            <table class="db-table">
+              <thead>
+                <tr>
+                  <th>Batch Ref</th>
+                  <th>Formulation Name</th>
+                  <th>Sourcing Facility</th>
+                  <th>Application</th>
+                  <th>Cert Status</th>
+                  <th>Quality Score</th>
+                  <th>Stock Vol</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#DET-2026-A1</strong></td>
+                  <td>Plant-Based Bio Detergent</td>
+                  <td>Oregon, USA</td>
+                  <td>Cold-Water Wash</td>
+                  <td><span class="db-status status-delivered">EcoCert Approved</span></td>
+                  <td><strong>99.9% Purity</strong></td>
+                  <td>540 Liters</td>
+                </tr>
+                <tr>
+                  <td><strong>#SOL-2026-B9</strong></td>
+                  <td>Liquid Silicone Solvent</td>
+                  <td>Switzerland</td>
+                  <td>Closed-Loop Dry Clean</td>
+                  <td><span class="db-status status-delivered">PERC-Free</span></td>
+                  <td><strong>99.7% Purity</strong></td>
+                  <td>410 Liters</td>
+                </tr>
+                <tr>
+                  <td><strong>#MST-2026-C2</strong></td>
+                  <td>French Lavender Finishing Mist</td>
+                  <td>French Alps</td>
+                  <td>Garment Finishing</td>
+                  <td><span class="db-status status-shipped">Certified Bio</span></td>
+                  <td><strong>99.5% Purity</strong></td>
+                  <td>290 Liters</td>
+                </tr>
+                <tr>
+                  <td><strong>#ST-2026-D4</strong></td>
+                  <td>Organic Rice Starch Finish</td>
+                  <td>Kyoto, Japan</td>
+                  <td>Shirt Pressing</td>
+                  <td><span class="db-status status-processing">Biodegradable</span></td>
+                  <td><strong>99.2% Purity</strong></td>
+                  <td><strong style="color: #e74c3c;">45 kg (Low)</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="db-tab-pane" id="pane-customers" role="tabpanel" aria-labelledby="tab-btn-customers" hidden>
+        <div class="db-pane-header">
+          <h2>Customer Insights &amp; Garment Care Preferences</h2>
+          <p>Analyze fabric care preferences, member retention trajectories, and VIP customer analytics.</p>
+        </div>
+
+        <div class="db-kpi-grid">
+          <div class="db-kpi-card">
+            <div class="db-kpi-header">
+              <span class="db-kpi-title">Net Promoter Score</span>
+              <span class="db-kpi-icon icon-purple"><i data-lucide="award" aria-hidden="true"></i></span>
+            </div>
+            <div class="db-kpi-val">94 / 100</div>
+            <div class="db-kpi-footer">
+              <span class="db-kpi-trend trend-up"><i data-lucide="trending-up" aria-hidden="true"></i> +3.2 pts</span>
+              <span class="db-kpi-note">World-Class Rating</span>
+            </div>
+          </div>
+
+          <div class="db-kpi-card">
+            <div class="db-kpi-header">
+              <span class="db-kpi-title">Repeat Pickup Rate</span>
+              <span class="db-kpi-icon icon-green"><i data-lucide="repeat" aria-hidden="true"></i></span>
+            </div>
+            <div class="db-kpi-val">84.6%</div>
+            <div class="db-kpi-footer">
+              <span class="db-kpi-trend trend-up"><i data-lucide="trending-up" aria-hidden="true"></i> +6.8%</span>
+              <span class="db-kpi-note">30-day reorder rate</span>
+            </div>
+          </div>
+
+          <div class="db-kpi-card">
+            <div class="db-kpi-header">
+              <span class="db-kpi-title">Avg Order Value (AOV)</span>
+              <span class="db-kpi-icon icon-gold"><i data-lucide="shopping-cart" aria-hidden="true"></i></span>
+            </div>
+            <div class="db-kpi-val">$118.50</div>
+            <div class="db-kpi-footer">
+              <span class="db-kpi-trend trend-up"><i data-lucide="trending-up" aria-hidden="true"></i> +15.2%</span>
+              <span class="db-kpi-note">per transaction</span>
+            </div>
+          </div>
+
+          <div class="db-kpi-card">
+            <div class="db-kpi-header">
+              <span class="db-kpi-title">Active VIP Members</span>
+              <span class="db-kpi-icon icon-blue"><i data-lucide="users" aria-hidden="true"></i></span>
+            </div>
+            <div class="db-kpi-val">3,890</div>
+            <div class="db-kpi-footer">
+              <span class="db-kpi-trend trend-neutral"><i data-lucide="heart" aria-hidden="true"></i> Luxury Valet</span>
+              <span class="db-kpi-note">Subscribers</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="db-charts-row">
+          <div class="db-chart-card db-chart-large">
+            <div class="db-ccard-header">
+              <div>
+                <h3 class="db-ccard-title">Member Retention &amp; Annual Renewal Trajectory</h3>
+                <p class="db-ccard-sub">Subscription retention percentage over an 8-month cohort period</p>
+              </div>
+            </div>
+            <div class="db-chart-box">
+              <canvas id="chart-retention-line"></canvas>
+            </div>
+          </div>
+
+          <div class="db-chart-card db-chart-medium">
+            <div class="db-ccard-header">
+              <div>
+                <h3 class="db-ccard-title">Garment Preference Demographics</h3>
+                <p class="db-ccard-sub">Primary fabric care selection distribution of subscribers</p>
+              </div>
+            </div>
+            <div class="db-chart-box">
+              <canvas id="chart-skintype-bar"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="db-chart-card">
+          <div class="db-ccard-header">
+            <h3 class="db-ccard-title">Top Luxury Valet &amp; Executive Members</h3>
+            <span class="db-welcome-badge"><i data-lucide="sparkles" aria-hidden="true"></i> VIP Cohort</span>
+          </div>
+          <div class="db-table-wrapper">
+            <table class="db-table">
+              <thead>
+                <tr>
+                  <th>Member Name</th>
+                  <th>Plan Tier</th>
+                  <th>Preferred Care Style</th>
+                  <th>Total Pickups</th>
+                  <th>Lifetime Spend</th>
+                  <th>Member Since</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="db-table-user">
+                      <img src="assets/founder1.jpg" alt="Aria F." />
+                      <div>
+                        <strong>Aria Fontaine</strong>
+                        <p style="margin:0; font-size:0.72rem; color:var(--text-muted);">aria.fontaine@luxury.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="db-status status-shipped"
+                      style="background: rgba(107,79,138,0.2); color: var(--deep-lavender);">Luxury Valet VIP</span></td>
+                  <td>Silk &amp; Cashmere Care</td>
+                  <td>34 Pickups</td>
+                  <td><strong>$3,420.00</strong></td>
+                  <td>Jan 2024</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="db-table-user">
+                      <img src="assets/founder2.jpg" alt="Dr. Mara E." />
+                      <div>
+                        <strong>Dr. Mara Elise</strong>
+                        <p style="margin:0; font-size:0.72rem; color:var(--text-muted);">mara.elise@dermatology.org</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="db-status status-delivered">Executive Wardrobe</span></td>
+                  <td>Tailored Suit Press</td>
+                  <td>26 Pickups</td>
+                  <td><strong>$2,890.00</strong></td>
+                  <td>May 2024</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="db-table-user">
+                      <img src="assets/founder3.jpg" alt="Sage W." />
+                      <div>
+                        <strong>Sage Williams</strong>
+                        <p style="margin:0; font-size:0.72rem; color:var(--text-muted);">sage.williams@artisan.co</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="db-status status-delivered">Executive Wardrobe</span></td>
+                  <td>French Linen Wash &amp; Fold</td>
+                  <td>19 Pickups</td>
+                  <td><strong>$1,940.00</strong></td>
+                  <td>Nov 2024</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="db-tab-pane" id="pane-settings" role="tabpanel" aria-labelledby="tab-btn-settings" hidden>
+        <div class="db-pane-header">
+          <h2>Settings &amp; Dashboard Preferences</h2>
+          <p>Manage operations account settings, pickup alerts, and valet portal preferences.</p>
+        </div>
+
+        <div class="db-settings-card">
+          <form class="db-settings-form" onsubmit="event.preventDefault(); alert('Preferences saved successfully!');">
+            <div class="db-sgroup">
+              <label>Operations Admin Full Name</label>
+              <input type="text" value="Elena Vance" class="db-sinput" />
+            </div>
+            <div class="db-sgroup">
+              <label>Email Address</label>
+              <input type="email" value="care@washaura.com" class="db-sinput" />
+            </div>
+            <div class="db-sgroup">
+              <label>Supply Low Stock Alert Threshold</label>
+              <select class="db-sinput">
+                <option>Below 15% (Recommended)</option>
+                <option>Below 25%</option>
+                <option>Below 10%</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary jn-btn-primary">Save Preferences</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="home1.js" defer></script>
+  <script src="dashboard.js" defer></script>
+</body>
+
+</html>
