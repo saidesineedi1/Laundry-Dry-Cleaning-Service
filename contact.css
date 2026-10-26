@@ -383,7 +383,7 @@
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
   gap: 48px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .contact-form-card {
@@ -392,6 +392,9 @@
   border-radius: var(--radius-xl);
   padding: 48px 40px;
   box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .form-header {
@@ -426,6 +429,8 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
+  flex: 1;
+  justify-content: space-between;
 }
 
 .form-row-2 {
@@ -670,6 +675,7 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
+  height: 100%;
 }
 
 .info-card-box {
@@ -678,6 +684,9 @@
   border-radius: var(--radius-xl);
   padding: 36px 32px;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .info-card-title {
@@ -698,6 +707,8 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  flex: 1;
+  justify-content: space-between;
 }
 
 .method-item {
