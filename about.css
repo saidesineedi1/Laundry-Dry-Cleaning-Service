@@ -62,7 +62,7 @@
 
 .about-hero-inner {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 0.9fr 1.1fr;
   align-items: center;
   gap: 56px;
   position: relative;
@@ -1160,6 +1160,14 @@ html[dir="rtl"] .timeline-highlights-pills {
     grid-template-columns: 1fr;
     gap: 48px;
     text-align: center;
+  }
+
+  .about-hero-content {
+    order: 1;
+  }
+
+  .about-hero-visual {
+    order: 2;
   }
 
   .breadcrumb-trail,
